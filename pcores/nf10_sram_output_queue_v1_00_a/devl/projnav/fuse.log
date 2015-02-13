@@ -1,22 +1,30 @@
-Running: /local/scratch/jz377/Xilinx/13.4/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/local/scratch/jz377/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/axififoarbiter_tb_isim_beh.exe" -prj "/local/scratch/jz377/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/axififoarbiter_tb_beh.prj" "work.axififoarbiter_tb" "work.glbl" 
+Running: /local/scratch/jz377/Xilinx/13.4/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /local/scratch/jz377/git_repo/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/Axi2Mem_tb_isim_beh.exe -prj /local/scratch/jz377/git_repo/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/Axi2Mem_tb_beh.prj work.Axi2Mem_tb work.glbl 
 ISim O.87xd (signature 0x8ddf5b5d)
 Number of CPUs detected in this system: 12
 Turning on mult-threading, number of parallel sub-compilation jobs: 24 
 Determining compilation order of HDL files
-Analyzing Verilog file "/local/scratch/jz377/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/../../hdl/verilog/axififoarbiter.v" into library work
-Analyzing Verilog file "/local/scratch/jz377/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/axififoarbiter_tb.v" into library work
+Analyzing Verilog file "/local/scratch/jz377/git_repo/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/ipcore_dir/small_sync_fifo.v" into library work
+Analyzing Verilog file "/local/scratch/jz377/git_repo/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/../../hdl/verilog/axififoarbiter.v" into library work
+Analyzing Verilog file "/local/scratch/jz377/git_repo/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/../../hdl/verilog/axi2fifo(rev).v" into library work
+Analyzing Verilog file "/local/scratch/jz377/git_repo/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/../../hdl/verilog/test.axi2mem.v" into library work
 Analyzing Verilog file "/local/scratch/jz377/Xilinx/13.4/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
+WARNING:HDLCompiler:329 - "/local/scratch/jz377/git_repo/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/../../hdl/verilog/test.axi2mem.v" Line 49: Target <output_enable> of concurrent assignment or output port connection should be a net type.
 Completed static elaboration
-Fuse Memory Usage: 94224 KB
-Fuse CPU Usage: 800 ms
+Fuse Memory Usage: 96636 KB
+Fuse CPU Usage: 820 ms
+Compiling module fifo_generator_v8_4_bhv_ver_ss(C...
+Compiling module fifo_generator_v8_4_bhv_ver_prel...
+Compiling module FIFO_GENERATOR_V8_4_CONV_VER(C_C...
+Compiling module FIFO_GENERATOR_V8_4(C_COMMON_CLO...
+Compiling module small_sync_fifo
+Compiling module Axi2Fifo_default
 Compiling module AxiFifoArbiter
-Compiling module axififoarbiter_tb
+Compiling module Axi2Mem_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
-Compiled 3 Verilog Units
-Built simulation executable /local/scratch/jz377/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/axififoarbiter_tb_isim_beh.exe
-Fuse Memory Usage: 1703128 KB
-Fuse CPU Usage: 810 ms
-GCC CPU Usage: 60 ms
+Compiled 9 Verilog Units
+Built simulation executable /local/scratch/jz377/git_repo/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/Axi2Mem_tb_isim_beh.exe
+Fuse Memory Usage: 1707224 KB
+Fuse CPU Usage: 890 ms
+GCC CPU Usage: 1480 ms
