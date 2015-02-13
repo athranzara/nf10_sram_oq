@@ -64,7 +64,7 @@
       <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="45"/>
     </file>
     <file xil_pn:name="ipcore_dir/small_sync_fifo.v" xil_pn:type="FILE_VERILOG">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="1"/>
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
     </file>
     <file xil_pn:name="ipcore_dir/async_fifo_buffer.v" xil_pn:type="FILE_VERILOG">
@@ -74,6 +74,10 @@
     <file xil_pn:name="../../hdl/verilog/test.axi2mem.v" xil_pn:type="FILE_VERILOG">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="4"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="13"/>
+    </file>
+    <file xil_pn:name="../../hdl/verilog/async_fifo.v" xil_pn:type="FILE_VERILOG">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="1"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="28"/>
     </file>
   </files>
 

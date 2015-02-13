@@ -6,19 +6,19 @@
    <spirit:version>1.0</spirit:version>
    <spirit:componentInstances>
       <spirit:componentInstance>
-         <spirit:instanceName>async_fifo_buffer</spirit:instanceName>
+         <spirit:instanceName>async_fifo</spirit:instanceName>
          <spirit:componentRef spirit:vendor="xilinx.com" spirit:library="ip" spirit:name="fifo_generator" spirit:version="8.4" />
          <spirit:configurableElementValues>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.COMPONENT_NAME">async_fifo_buffer</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.COMPONENT_NAME">async_fifo</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.FIFO_IMPLEMENTATION">Independent_Clocks_Block_RAM</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.SYNCHRONIZATION_STAGES">2</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.SYNCHRONIZATION_STAGES_AXI">2</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.INTERFACE_TYPE">Native</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PERFORMANCE_OPTIONS">First_Word_Fall_Through</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.INPUT_DATA_WIDTH">262</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.INPUT_DEPTH">16</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.OUTPUT_DATA_WIDTH">262</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.OUTPUT_DEPTH">16</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.INPUT_DATA_WIDTH">202</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.INPUT_DEPTH">32</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.OUTPUT_DATA_WIDTH">202</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.OUTPUT_DEPTH">32</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.ENABLE_ECC">false</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.USE_EMBEDDED_REGISTERS">false</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.RESET_PIN">true</spirit:configurableElementValue>
@@ -41,17 +41,17 @@
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.INJECT_DBIT_ERROR">false</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.USE_EXTRA_LOGIC">false</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.DATA_COUNT">false</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.DATA_COUNT_WIDTH">4</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.DATA_COUNT_WIDTH">5</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.WRITE_DATA_COUNT">false</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.WRITE_DATA_COUNT_WIDTH">4</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.WRITE_DATA_COUNT_WIDTH">5</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.READ_DATA_COUNT">false</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.READ_DATA_COUNT_WIDTH">4</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.READ_DATA_COUNT_WIDTH">5</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.DISABLE_TIMING_VIOLATIONS">false</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.READ_CLOCK_FREQUENCY">1</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.WRITE_CLOCK_FREQUENCY">1</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PROGRAMMABLE_FULL_TYPE">No_Programmable_Full_Threshold</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.FULL_THRESHOLD_ASSERT_VALUE">15</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.FULL_THRESHOLD_NEGATE_VALUE">14</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.FULL_THRESHOLD_ASSERT_VALUE">31</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.FULL_THRESHOLD_NEGATE_VALUE">30</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PROGRAMMABLE_EMPTY_TYPE">No_Programmable_Empty_Threshold</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.EMPTY_THRESHOLD_ASSERT_VALUE">4</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.EMPTY_THRESHOLD_NEGATE_VALUE">5</spirit:configurableElementValue>
@@ -182,10 +182,10 @@
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.ENABLE_COMMON_OVERFLOW">false</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.ENABLE_READ_POINTER_INCREMENT_BY2">false</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_COMMON_CLOCK">0</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_DATA_COUNT_WIDTH">4</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_DIN_WIDTH">262</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_DATA_COUNT_WIDTH">5</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_DIN_WIDTH">202</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_DOUT_RST_VAL">0</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_DOUT_WIDTH">262</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_DOUT_WIDTH">202</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_FAMILY">virtex5</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_FULL_FLAGS_RST_VAL">1</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_ALMOST_EMPTY">1</spirit:configurableElementValue>
@@ -209,13 +209,13 @@
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_PROG_EMPTY_THRESH_ASSERT_VAL">4</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_PROG_EMPTY_THRESH_NEGATE_VAL">5</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_PROG_EMPTY_TYPE">0</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_PROG_FULL_THRESH_ASSERT_VAL">15</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_PROG_FULL_THRESH_NEGATE_VAL">14</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_PROG_FULL_THRESH_ASSERT_VAL">31</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_PROG_FULL_THRESH_NEGATE_VAL">30</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_PROG_FULL_TYPE">0</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_RD_DATA_COUNT_WIDTH">4</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_RD_DEPTH">16</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_RD_DATA_COUNT_WIDTH">5</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_RD_DEPTH">32</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_RD_FREQ">1</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_RD_PNTR_WIDTH">4</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_RD_PNTR_WIDTH">5</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_UNDERFLOW_LOW">0</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_USE_DOUT_RST">1</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_USE_ECC">0</spirit:configurableElementValue>
@@ -223,10 +223,10 @@
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_USE_FWFT_DATA_COUNT">0</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_VALID_LOW">0</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_WR_ACK_LOW">0</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_WR_DATA_COUNT_WIDTH">4</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_WR_DEPTH">16</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_WR_DATA_COUNT_WIDTH">5</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_WR_DEPTH">32</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_WR_FREQ">1</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_WR_PNTR_WIDTH">4</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_WR_PNTR_WIDTH">5</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_MSGON_VAL">1</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_ENABLE_RST_SYNC">1</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_ERROR_INJECTION_TYPE">0</spirit:configurableElementValue>
@@ -402,11 +402,11 @@
                <xilinx:fileSet>
                   <xilinx:name>ip_xco_generator</xilinx:name>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer.xco</xilinx:name>
+                     <xilinx:name>./async_fifo.xco</xilinx:name>
                      <xilinx:userFileType>xco</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
-                     <xilinx:checkSum>0x4ABF06DF</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x666B95CE</xilinx:checkSum>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
                <xilinx:fileSet>
@@ -416,267 +416,267 @@
                      <xilinx:userFileType>pdf</xilinx:userFileType>
                      <xilinx:timeStamp>Sat Jan 07 13:52:08 GMT 2012</xilinx:timeStamp>
                      <xilinx:checkSum>0xA50473DF</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
                      <xilinx:name>./fifo_generator_v8_4_readme.txt</xilinx:name>
                      <xilinx:userFileType>txt</xilinx:userFileType>
                      <xilinx:timeStamp>Sat Jan 07 13:52:08 GMT 2012</xilinx:timeStamp>
                      <xilinx:checkSum>0x85A4D50A</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
                <xilinx:fileSet>
                   <xilinx:name>ejava_generator</xilinx:name>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/example_design/async_fifo_buffer_top.ucf</xilinx:name>
+                     <xilinx:name>./async_fifo/example_design/async_fifo_top.ucf</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>ucf</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
                      <xilinx:checkSum>0xB0FB4AAF</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/example_design/async_fifo_buffer_top.vhd</xilinx:name>
+                     <xilinx:name>./async_fifo/example_design/async_fifo_top.vhd</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>vhdl</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
-                     <xilinx:checkSum>0xFB68EBFD</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x1056AE47</xilinx:checkSum>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/example_design/async_fifo_buffer_top.xdc</xilinx:name>
+                     <xilinx:name>./async_fifo/example_design/async_fifo_top.xdc</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>xdc</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
                      <xilinx:checkSum>0xA1CB2F49</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/example_design/async_fifo_buffer_top_wrapper.vhd</xilinx:name>
+                     <xilinx:name>./async_fifo/example_design/async_fifo_top_wrapper.vhd</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>vhdl</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
-                     <xilinx:checkSum>0xD4469734</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x0657FAF2</xilinx:checkSum>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/implement/implement.bat</xilinx:name>
+                     <xilinx:name>./async_fifo/implement/implement.bat</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>unknown</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
-                     <xilinx:checkSum>0x08F8C0B2</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x01ED922C</xilinx:checkSum>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/implement/implement.sh</xilinx:name>
+                     <xilinx:name>./async_fifo/implement/implement.sh</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>unknown</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
-                     <xilinx:checkSum>0x45CEA9B9</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xC3457057</xilinx:checkSum>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/implement/planAhead_rdn.bat</xilinx:name>
+                     <xilinx:name>./async_fifo/implement/planAhead_rdn.bat</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>unknown</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
-                     <xilinx:checkSum>0x84BBC256</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x5064BABB</xilinx:checkSum>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/implement/planAhead_rdn.sh</xilinx:name>
+                     <xilinx:name>./async_fifo/implement/planAhead_rdn.sh</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>unknown</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
-                     <xilinx:checkSum>0xA307E00C</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x4754E647</xilinx:checkSum>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/implement/planAhead_rdn.tcl</xilinx:name>
+                     <xilinx:name>./async_fifo/implement/planAhead_rdn.tcl</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>tcl</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
-                     <xilinx:checkSum>0x721FDAAD</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x497E9200</xilinx:checkSum>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/implement/xst.prj</xilinx:name>
+                     <xilinx:name>./async_fifo/implement/xst.prj</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>unknown</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
-                     <xilinx:checkSum>0xD40C928B</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x8B9C7ED6</xilinx:checkSum>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/implement/xst.scr</xilinx:name>
+                     <xilinx:name>./async_fifo/implement/xst.scr</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>unknown</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
-                     <xilinx:checkSum>0xD2BF8953</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x6F642D16</xilinx:checkSum>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/simulation/fg_tb_dgen.vhd</xilinx:name>
+                     <xilinx:name>./async_fifo/simulation/fg_tb_dgen.vhd</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>vhdl</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
                      <xilinx:checkSum>0x816EE5E6</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/simulation/fg_tb_dverif.vhd</xilinx:name>
+                     <xilinx:name>./async_fifo/simulation/fg_tb_dverif.vhd</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>vhdl</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
                      <xilinx:checkSum>0xF05EB5BC</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/simulation/fg_tb_pctrl.vhd</xilinx:name>
+                     <xilinx:name>./async_fifo/simulation/fg_tb_pctrl.vhd</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>vhdl</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
                      <xilinx:checkSum>0x1C7EC94B</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/simulation/fg_tb_pkg.vhd</xilinx:name>
+                     <xilinx:name>./async_fifo/simulation/fg_tb_pkg.vhd</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>vhdl</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
-                     <xilinx:checkSum>0xE021142C</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x253DE9BC</xilinx:checkSum>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/simulation/fg_tb_rng.vhd</xilinx:name>
+                     <xilinx:name>./async_fifo/simulation/fg_tb_rng.vhd</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>vhdl</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
                      <xilinx:checkSum>0xABDDF7E0</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/simulation/fg_tb_synth.vhd</xilinx:name>
+                     <xilinx:name>./async_fifo/simulation/fg_tb_synth.vhd</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>vhdl</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
-                     <xilinx:checkSum>0xE2B841CD</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x4F87A146</xilinx:checkSum>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/simulation/fg_tb_top.vhd</xilinx:name>
+                     <xilinx:name>./async_fifo/simulation/fg_tb_top.vhd</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>vhdl</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
-                     <xilinx:checkSum>0x2F29905F</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x897853CF</xilinx:checkSum>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/simulation/functional/simulate_isim.sh</xilinx:name>
+                     <xilinx:name>./async_fifo/simulation/functional/simulate_isim.sh</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>unknown</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
-                     <xilinx:checkSum>0x938E27DF</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x72D6AEA3</xilinx:checkSum>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/simulation/functional/simulate_mti.do</xilinx:name>
+                     <xilinx:name>./async_fifo/simulation/functional/simulate_mti.do</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>unknown</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
-                     <xilinx:checkSum>0xA22BB214</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x45FFA21F</xilinx:checkSum>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/simulation/functional/simulate_ncsim.sh</xilinx:name>
+                     <xilinx:name>./async_fifo/simulation/functional/simulate_ncsim.sh</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>unknown</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
-                     <xilinx:checkSum>0xCA1DC1E3</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x2ECFE46E</xilinx:checkSum>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/simulation/functional/wave_isim.tcl</xilinx:name>
+                     <xilinx:name>./async_fifo/simulation/functional/wave_isim.tcl</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>tcl</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
                      <xilinx:checkSum>0x60C1AF27</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/simulation/functional/wave_mti.do</xilinx:name>
+                     <xilinx:name>./async_fifo/simulation/functional/wave_mti.do</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>unknown</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
                      <xilinx:checkSum>0x129D167B</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/simulation/functional/wave_ncsim.sv</xilinx:name>
+                     <xilinx:name>./async_fifo/simulation/functional/wave_ncsim.sv</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>unknown</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
                      <xilinx:checkSum>0x332C0C09</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/simulation/timing/simulate_isim.sh</xilinx:name>
+                     <xilinx:name>./async_fifo/simulation/timing/simulate_isim.sh</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>unknown</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
                      <xilinx:checkSum>0x263D2BC4</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/simulation/timing/simulate_mti.do</xilinx:name>
+                     <xilinx:name>./async_fifo/simulation/timing/simulate_mti.do</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>unknown</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
                      <xilinx:checkSum>0x066EB5B9</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/simulation/timing/simulate_ncsim.sh</xilinx:name>
+                     <xilinx:name>./async_fifo/simulation/timing/simulate_ncsim.sh</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>unknown</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
                      <xilinx:checkSum>0x7FDCBEAD</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/simulation/timing/wave_isim.tcl</xilinx:name>
+                     <xilinx:name>./async_fifo/simulation/timing/wave_isim.tcl</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>tcl</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
                      <xilinx:checkSum>0x60C1AF27</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/simulation/timing/wave_mti.do</xilinx:name>
+                     <xilinx:name>./async_fifo/simulation/timing/wave_mti.do</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>unknown</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
                      <xilinx:checkSum>0x129D167B</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer/simulation/timing/wave_ncsim.sv</xilinx:name>
+                     <xilinx:name>./async_fifo/simulation/timing/wave_ncsim.sv</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>unknown</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:41:24 GMT 2015</xilinx:timeStamp>
+                     <xilinx:timeStamp>Fri Feb 13 17:14:04 GMT 2015</xilinx:timeStamp>
                      <xilinx:checkSum>0x332C0C09</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
                <xilinx:fileSet>
                   <xilinx:name>ngc_netlist_generator</xilinx:name>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer.ngc</xilinx:name>
+                     <xilinx:name>./async_fifo.ngc</xilinx:name>
                      <xilinx:userFileType>ngc</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:42:48 GMT 2015</xilinx:timeStamp>
-                     <xilinx:checkSum>0xBB750BFC</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:timeStamp>Fri Feb 13 17:15:24 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x50B9905B</xilinx:checkSum>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
                <xilinx:fileSet>
@@ -688,61 +688,61 @@
                <xilinx:fileSet>
                   <xilinx:name>instantiation_template_generator</xilinx:name>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer.veo</xilinx:name>
+                     <xilinx:name>./async_fifo.veo</xilinx:name>
                      <xilinx:userFileType>veo</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:42:49 GMT 2015</xilinx:timeStamp>
-                     <xilinx:checkSum>0xF89E1C8C</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:timeStamp>Fri Feb 13 17:15:24 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xF36E11B1</xilinx:checkSum>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
                <xilinx:fileSet>
                   <xilinx:name>structural_simulation_model_generator</xilinx:name>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer.v</xilinx:name>
+                     <xilinx:name>./async_fifo.v</xilinx:name>
                      <xilinx:userFileType>verilog</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:42:49 GMT 2015</xilinx:timeStamp>
-                     <xilinx:checkSum>0x1D17EE01</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:timeStamp>Fri Feb 13 17:15:25 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xDC18D90E</xilinx:checkSum>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
                <xilinx:fileSet>
                   <xilinx:name>asy_generator</xilinx:name>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer.asy</xilinx:name>
+                     <xilinx:name>./async_fifo.asy</xilinx:name>
                      <xilinx:userFileType>asy</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:42:51 GMT 2015</xilinx:timeStamp>
-                     <xilinx:checkSum>0x064DB4CD</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:timeStamp>Fri Feb 13 17:15:26 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0xFC469F98</xilinx:checkSum>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
                <xilinx:fileSet>
                   <xilinx:name>xmdf_generator</xilinx:name>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer_xmdf.tcl</xilinx:name>
+                     <xilinx:name>./async_fifo_xmdf.tcl</xilinx:name>
                      <xilinx:userFileType>tclXmdf</xilinx:userFileType>
                      <xilinx:userFileType>tcl</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:42:51 GMT 2015</xilinx:timeStamp>
-                     <xilinx:checkSum>0xE762BAAB</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:timeStamp>Fri Feb 13 17:15:26 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x6F6AE8C2</xilinx:checkSum>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
                <xilinx:fileSet>
                   <xilinx:name>ise_generator</xilinx:name>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer.gise</xilinx:name>
+                     <xilinx:name>./async_fifo.gise</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>gise</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:42:53 GMT 2015</xilinx:timeStamp>
-                     <xilinx:checkSum>0xB56D8896</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:timeStamp>Fri Feb 13 17:15:28 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x89B3F8E6</xilinx:checkSum>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer.xise</xilinx:name>
+                     <xilinx:name>./async_fifo.xise</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>xise</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:42:53 GMT 2015</xilinx:timeStamp>
-                     <xilinx:checkSum>0x0ADFBC72</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:timeStamp>Fri Feb 13 17:15:28 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x1A190AB2</xilinx:checkSum>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
                <xilinx:fileSet>
@@ -751,13 +751,13 @@
                <xilinx:fileSet>
                   <xilinx:name>flist_generator</xilinx:name>
                   <xilinx:file>
-                     <xilinx:name>./async_fifo_buffer_flist.txt</xilinx:name>
+                     <xilinx:name>./async_fifo_flist.txt</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>txtFlist</xilinx:userFileType>
                      <xilinx:userFileType>txt</xilinx:userFileType>
-                     <xilinx:timeStamp>Wed Feb 04 10:42:53 GMT 2015</xilinx:timeStamp>
-                     <xilinx:checkSum>0xCF664870</xilinx:checkSum>
-                     <xilinx:generationId>generationid_2818038884</xilinx:generationId>
+                     <xilinx:timeStamp>Fri Feb 13 17:15:28 GMT 2015</xilinx:timeStamp>
+                     <xilinx:checkSum>0x1D545FD9</xilinx:checkSum>
+                     <xilinx:generationId>generationid_3904106102</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
                <xilinx:fileSet>
@@ -767,18 +767,18 @@
          </spirit:vendorExtensions>
       </spirit:componentInstance>
       <spirit:componentInstance>
-         <spirit:instanceName>small_sync_fifo</spirit:instanceName>
+         <spirit:instanceName>async_fifo_buffer</spirit:instanceName>
          <spirit:componentRef spirit:vendor="xilinx.com" spirit:library="ip" spirit:name="fifo_generator" spirit:version="8.4" />
          <spirit:configurableElementValues>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.COMPONENT_NAME">small_sync_fifo</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.FIFO_IMPLEMENTATION">Common_Clock_Block_RAM</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.COMPONENT_NAME">async_fifo_buffer</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.FIFO_IMPLEMENTATION">Independent_Clocks_Block_RAM</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.SYNCHRONIZATION_STAGES">2</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.SYNCHRONIZATION_STAGES_AXI">2</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.INTERFACE_TYPE">Native</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PERFORMANCE_OPTIONS">First_Word_Fall_Through</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.INPUT_DATA_WIDTH">202</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.INPUT_DATA_WIDTH">262</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.INPUT_DEPTH">16</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.OUTPUT_DATA_WIDTH">202</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.OUTPUT_DATA_WIDTH">262</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.OUTPUT_DEPTH">16</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.ENABLE_ECC">false</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.USE_EMBEDDED_REGISTERS">false</spirit:configurableElementValue>
@@ -800,13 +800,13 @@
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.OVERFLOW_SENSE">Active_High</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.INJECT_SBIT_ERROR">false</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.INJECT_DBIT_ERROR">false</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.USE_EXTRA_LOGIC">true</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.USE_EXTRA_LOGIC">false</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.DATA_COUNT">false</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.DATA_COUNT_WIDTH">5</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.DATA_COUNT_WIDTH">4</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.WRITE_DATA_COUNT">false</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.WRITE_DATA_COUNT_WIDTH">5</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.WRITE_DATA_COUNT_WIDTH">4</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.READ_DATA_COUNT">false</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.READ_DATA_COUNT_WIDTH">5</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.READ_DATA_COUNT_WIDTH">4</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.DISABLE_TIMING_VIOLATIONS">false</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.READ_CLOCK_FREQUENCY">1</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.WRITE_CLOCK_FREQUENCY">1</spirit:configurableElementValue>
@@ -980,19 +980,19 @@
          </spirit:vendorExtensions>
       </spirit:componentInstance>
       <spirit:componentInstance>
-         <spirit:instanceName>async_fifo</spirit:instanceName>
+         <spirit:instanceName>small_sync_fifo</spirit:instanceName>
          <spirit:componentRef spirit:vendor="xilinx.com" spirit:library="ip" spirit:name="fifo_generator" spirit:version="8.4" />
          <spirit:configurableElementValues>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.COMPONENT_NAME">async_fifo</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.FIFO_IMPLEMENTATION">Independent_Clocks_Block_RAM</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.COMPONENT_NAME">small_sync_fifo</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.FIFO_IMPLEMENTATION">Common_Clock_Block_RAM</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.SYNCHRONIZATION_STAGES">2</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.SYNCHRONIZATION_STAGES_AXI">2</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.INTERFACE_TYPE">Native</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PERFORMANCE_OPTIONS">First_Word_Fall_Through</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.INPUT_DATA_WIDTH">202</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.INPUT_DEPTH">32</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.INPUT_DEPTH">16</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.OUTPUT_DATA_WIDTH">202</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.OUTPUT_DEPTH">32</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.OUTPUT_DEPTH">16</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.ENABLE_ECC">false</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.USE_EMBEDDED_REGISTERS">false</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.RESET_PIN">true</spirit:configurableElementValue>
@@ -1013,7 +1013,7 @@
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.OVERFLOW_SENSE">Active_High</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.INJECT_SBIT_ERROR">false</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.INJECT_DBIT_ERROR">false</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.USE_EXTRA_LOGIC">false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.USE_EXTRA_LOGIC">true</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.DATA_COUNT">false</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.DATA_COUNT_WIDTH">5</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.WRITE_DATA_COUNT">false</spirit:configurableElementValue>
@@ -1024,8 +1024,8 @@
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.READ_CLOCK_FREQUENCY">1</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.WRITE_CLOCK_FREQUENCY">1</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PROGRAMMABLE_FULL_TYPE">No_Programmable_Full_Threshold</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.FULL_THRESHOLD_ASSERT_VALUE">31</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.FULL_THRESHOLD_NEGATE_VALUE">30</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.FULL_THRESHOLD_ASSERT_VALUE">15</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.FULL_THRESHOLD_NEGATE_VALUE">14</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PROGRAMMABLE_EMPTY_TYPE">No_Programmable_Empty_Threshold</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.EMPTY_THRESHOLD_ASSERT_VALUE">4</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.EMPTY_THRESHOLD_NEGATE_VALUE">5</spirit:configurableElementValue>

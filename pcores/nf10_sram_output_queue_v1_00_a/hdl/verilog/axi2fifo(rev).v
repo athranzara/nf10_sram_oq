@@ -313,12 +313,10 @@ end
 
 
 
-
-
-
-small_sync_fifo sfifo (
+async_fifo async_fifo (
     .rst(reset),
-    .clk(memclk),
+    .wr_clk(clk),
+    .rd_clk(memclk),
     .din(fifo_data),
     .wr_en(wren_fifo),
     .rd_en(rden),
@@ -329,6 +327,21 @@ small_sync_fifo sfifo (
     .almost_empty(r_almost_empty),
     .valid(dout_valid)
 );
+
+// small synchornous fifo has timing problem
+//small_sync_fifo sfifo (
+//    .rst(reset),
+//    .clk(memclk),
+//    .din(fifo_data),
+//    .wr_en(wren_fifo),
+//    .rd_en(rden),
+//    .dout(dout),
+//    .full(wfull),
+//    .almost_full(w_almost_full),
+//    .empty(rempty),
+//    .almost_empty(r_almost_empty),
+//    .valid(dout_valid)
+//);
 
 
 endmodule

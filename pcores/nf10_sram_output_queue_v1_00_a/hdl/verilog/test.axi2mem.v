@@ -12,7 +12,6 @@ module Axi2Mem_tb;
 	reg [31:0] tstrb;
 	reg [127:0] tuser;
 	reg tlast;
-	reg output_enable;
 
 	// Outputs
 	wire tready;
@@ -22,6 +21,7 @@ module Axi2Mem_tb;
 	wire dout_valid_mem;
 	wire [4:0] oq;
 	wire [2:0] queue_id;
+	wire output_enable;
 	
 	Axi2Fifo A2F (
 		.clk(clk), 
@@ -155,7 +155,6 @@ end
 		tdata2 = 200;
 		tstrb = 0;
 		tuser = 0;
-		output_enable = 0;
 		i = 0;
 		packet_num = 0;
 
@@ -163,8 +162,6 @@ end
 		#10;
         reset = 1'b0;
         memreset = 1'b0;
-        #100;
-        output_enable = 1'b1;
 		// Add stimulus here
 
 	end
