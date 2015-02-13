@@ -1,0 +1,3 @@
+verilog work "../../hdl/verilog/axififoarbiter.v"
+verilog work "axififoarbiter_tb.v"
+verilog work "/local/scratch/jz377/Xilinx/13.4/ISE_DS/ISE//verilog/src/glbl.v"

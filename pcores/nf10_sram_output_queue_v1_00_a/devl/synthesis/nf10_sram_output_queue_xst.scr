@@ -1,0 +1,11 @@
+run
+-opt_level 2
+-opt_mode speed
+-ifmt mixed
+-ifn /local/scratch/jz377/Dropbox/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/synthesis/nf10_sram_output_queue_xst.prj
+-top nf10_sram_output_queue
+-p virtex6
+-ofn /local/scratch/jz377/Dropbox/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/synthesis/nf10_sram_output_queue_xst.ngc
+-iobuf NO
+-rtlview YES
+-hierarchy_separator /

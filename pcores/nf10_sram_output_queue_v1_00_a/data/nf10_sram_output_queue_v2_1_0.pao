@@ -1,0 +1,7 @@
+##############################################################################
+## Filename:          /local/scratch/jz377/Dropbox/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/data/nf10_sram_output_queue_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Fri Dec 12 15:40:13 2014 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib nf10_sram_output_queue_v1_00_a nf10_sram_output_queue verilog

@@ -1,0 +1,10 @@
+
+<EDKSYSTEM EDKVERSION="13.4" EDWVERSION="1.2" TIMESTAMP="Tue Jan 20 16:44:59 2015">
+
+  <SYSTEMINFO ARCH="virtex5" DEVICE="xc5vtx240t" PACKAGE="ff1759" PART="xc5vtx240tff1759-2" SOURCE="/local/scratch/jz377/Dropbox/nf10_sram_oq/system.xmp" SPEEDGRADE="-2"/>
+
+  <EXTERNALPORTS/>
+
+  <MODULES/>
+
+</EDKSYSTEM>

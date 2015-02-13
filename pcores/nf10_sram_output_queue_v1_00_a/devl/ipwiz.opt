@@ -1,0 +1,11 @@
+-batch 
+-create nf10_sram_output_queue 
+-ver 1.00.a 
+-dir /local/scratch/jz377/Dropbox/nf10_sram_oq/ 
+-lang verilog 
+-bus axi4stream ms 
+-xps 
+-ise 
+-totalin 256
+-totalout 256
+-driver 

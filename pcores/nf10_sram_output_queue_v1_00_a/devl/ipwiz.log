@@ -1,0 +1,47 @@
+
+----------------------------------------------------------------------------
+--                            File Generation                             --
+----------------------------------------------------------------------------
+Start Creating ISE project 
+Start Creating drver source 
+
+----------------------------------------------------------------------------
+--                              Final Report                              --
+----------------------------------------------------------------------------
+Thank you for using Create and Import Peripheral Wizard!
+
+Peripheral summary
+
+  top name       : nf10_sram_output_queue
+  version        : 1.00.a
+  type           : AXI4STREAM master slave
+  features       : 
+
+File Summary
+
+  - HDL source -
+/local/scratch/jz377/Dropbox/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/
+hdl/vhdl
+  top level      : nf10_sram_output_queue.vhd
+
+  - ISE project -
+/local/scratch/jz377/Dropbox/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/
+devl/projnav
+  ise project    : nf10_sram_output_queue.xise
+  tcl script     : nf10_sram_output_queue.tcl
+
+
+  - XST synthesis -
+/local/scratch/jz377/Dropbox/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/
+devl/synthesis
+  xst script     : nf10_sram_output_queue_xst.scr
+  xst project    : nf10_sram_output_queue_xst.prj
+
+  - Misc file -
+/local/scratch/jz377/Dropbox/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/
+devl
+  help           : README.txt
+  option         : ipwiz.opt
+  log            : ipwiz.log
+
+

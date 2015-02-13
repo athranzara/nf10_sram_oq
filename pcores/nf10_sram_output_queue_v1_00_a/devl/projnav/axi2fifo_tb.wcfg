@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/local/scratch/jz377/Dropbox/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/axi2fifo_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="axi2fifo_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="46" />
+   <wvobject fp_name="/axi2fifo_tb/uut/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/memreset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">memreset</obj_property>
+      <obj_property name="ObjectShortName">memreset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/memclk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">memclk</obj_property>
+      <obj_property name="ObjectShortName">memclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/tvalid" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tvalid</obj_property>
+      <obj_property name="ObjectShortName">tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/tdata" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">tdata[255:0]</obj_property>
+      <obj_property name="ObjectShortName">tdata[255:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/tstrb" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">tstrb[31:0]</obj_property>
+      <obj_property name="ObjectShortName">tstrb[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/tuser" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">tuser[127:0]</obj_property>
+      <obj_property name="ObjectShortName">tuser[127:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/tlast" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tlast</obj_property>
+      <obj_property name="ObjectShortName">tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/dout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dout[201:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[201:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/dout_valid" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">dout_valid</obj_property>
+      <obj_property name="ObjectShortName">dout_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/output_enable" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">output_enable</obj_property>
+      <obj_property name="ObjectShortName">output_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/wfull" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wfull</obj_property>
+      <obj_property name="ObjectShortName">wfull</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/w_almost_full" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">w_almost_full</obj_property>
+      <obj_property name="ObjectShortName">w_almost_full</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/rempty" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rempty</obj_property>
+      <obj_property name="ObjectShortName">rempty</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/r_almost_empty" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">r_almost_empty</obj_property>
+      <obj_property name="ObjectShortName">r_almost_empty</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/tstrb_count" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">tstrb_count[4:0]</obj_property>
+      <obj_property name="ObjectShortName">tstrb_count[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/tready" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tready</obj_property>
+      <obj_property name="ObjectShortName">tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/rden" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rden</obj_property>
+      <obj_property name="ObjectShortName">rden</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/rden_prev" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rden_prev</obj_property>
+      <obj_property name="ObjectShortName">rden_prev</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/wren" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wren</obj_property>
+      <obj_property name="ObjectShortName">wren</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/packet_start" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">packet_start</obj_property>
+      <obj_property name="ObjectShortName">packet_start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/next_packet_start" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">next_packet_start</obj_property>
+      <obj_property name="ObjectShortName">next_packet_start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/allow_packet" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">allow_packet</obj_property>
+      <obj_property name="ObjectShortName">allow_packet</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/next_allow_packet" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">next_allow_packet</obj_property>
+      <obj_property name="ObjectShortName">next_allow_packet</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/input_fifo_cnt" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">input_fifo_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">input_fifo_cnt[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/next_input_fifo_cnt" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">next_input_fifo_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">next_input_fifo_cnt[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/mem_usage" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_usage[18:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_usage[18:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/next_mem_usage" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">next_mem_usage[18:0]</obj_property>
+      <obj_property name="ObjectShortName">next_mem_usage[18:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/prev_mem_usage" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">prev_mem_usage[18:0]</obj_property>
+      <obj_property name="ObjectShortName">prev_mem_usage[18:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/fifo_data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">fifo_data[201:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_data[201:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/next_fifo_data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">next_fifo_data[201:0]</obj_property>
+      <obj_property name="ObjectShortName">next_fifo_data[201:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/prev_tdata" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">prev_tdata[255:0]</obj_property>
+      <obj_property name="ObjectShortName">prev_tdata[255:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/next_pkg_state" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">next_pkg_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">next_pkg_state[2:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/prev_tlast" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">prev_tlast</obj_property>
+      <obj_property name="ObjectShortName">prev_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/wren_fifo" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wren_fifo</obj_property>
+      <obj_property name="ObjectShortName">wren_fifo</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/next_wren_fifo" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">next_wren_fifo</obj_property>
+      <obj_property name="ObjectShortName">next_wren_fifo</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/next_output_queue" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">next_output_queue[4:0]</obj_property>
+      <obj_property name="ObjectShortName">next_output_queue[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/oq" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">oq[4:0]</obj_property>
+      <obj_property name="ObjectShortName">oq[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/read_tuser" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">read_tuser[127:0]</obj_property>
+      <obj_property name="ObjectShortName">read_tuser[127:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/read_tdata" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">read_tdata[255:0]</obj_property>
+      <obj_property name="ObjectShortName">read_tdata[255:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/read_tstrb" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">read_tstrb[4:0]</obj_property>
+      <obj_property name="ObjectShortName">read_tstrb[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/read_pkg_state" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">read_pkg_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">read_pkg_state[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/read_tlast" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">read_tlast</obj_property>
+      <obj_property name="ObjectShortName">read_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/pkg_state" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">pkg_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">pkg_state[2:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/axi2fifo_tb/uut/prev_tstrb_count" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">prev_tstrb_count[4:0]</obj_property>
+      <obj_property name="ObjectShortName">prev_tstrb_count[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

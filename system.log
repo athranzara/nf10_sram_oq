@@ -1,0 +1,148 @@
+Xilinx Platform Studio (XPS)
+Xilinx EDK 13.4 Build EDK_O.87xd
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Writing filter settings....
+Done writing filter settings to:
+	/local/scratch/jz377/Dropbox/nf10_sram_oq/etc/system.filters
+Done writing Tab View settings to:
+	/local/scratch/jz377/Dropbox/nf10_sram_oq/etc/system.gui
+Xilinx Platform Studio (XPS)
+Xilinx EDK 13.4 Build EDK_O.87xd
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Writing filter settings....
+Done writing filter settings to:
+	/local/scratch/jz377/Dropbox/nf10_sram_oq/etc/system.filters
+Done writing Tab View settings to:
+	/local/scratch/jz377/Dropbox/nf10_sram_oq/etc/system.gui
+Writing filter settings....
+Done writing filter settings to:
+	/local/scratch/jz377/Dropbox/nf10_sram_oq/etc/system.filters
+Done writing Tab View settings to:
+	/local/scratch/jz377/Dropbox/nf10_sram_oq/etc/system.gui
+Xilinx Platform Studio (XPS)
+Xilinx EDK 13.4 Build EDK_O.87xd
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+ERROR:EDK:4161 - No BUS_INTERFACE S_AXI found as specified for PORT axi_aclk - /local/scratch/jz377/Dropbox/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/data/nf10_sram_output_queue_v2_1_0.mpd line 99 
+ERROR:EDK:1848 - Mpd : Error in AssignDefaults/Check
+nf10_sram_output_queue_0 has been added to the project
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: axi_resetn - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: memclk - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: memclk_200 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: memclk_270 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_d_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_q_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_sa_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_w_n_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_r_n_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_bw_n_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_dll_off_n_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_cq_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_cq_n_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_c_n_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_k_n_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_c_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_k_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_d_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_q_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_sa_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_w_n_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_r_n_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_bw_n_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_dll_off_n_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_cq_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_cq_n_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_c_n_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_k_n_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_c_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_k_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_d_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_q_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_sa_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_w_n_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_r_n_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_bw_n_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_dll_off_n_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_cq_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_cq_n_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_c_n_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_k_n_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_c_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_k_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: masterbank_sel_pin - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: aresetn - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: locked - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: axi_resetn - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: memclk - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: memclk_200 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: memclk_270 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_d_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_q_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_sa_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_w_n_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_r_n_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_bw_n_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_dll_off_n_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_cq_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_cq_n_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_c_n_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_k_n_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_c_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_k_0 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_d_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_q_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_sa_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_w_n_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_r_n_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_bw_n_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_dll_off_n_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_cq_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_cq_n_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_c_n_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_k_n_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_c_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_k_1 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_d_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_q_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_sa_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_w_n_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_r_n_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_bw_n_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_dll_off_n_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_cq_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_cq_n_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_c_n_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_k_n_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_c_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: qdr_k_2 - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: masterbank_sel_pin - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: aresetn - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+ERROR:EDK:4125 - IPNAME: nf10_sram_output_queue, INSTANCE: nf10_sram_output_queue_0, PORT: locked - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a connection in the MHS. 
+nf10_sram_output_queue_0 has been deleted from the project
+Writing filter settings....
+Done writing filter settings to:
+	/local/scratch/jz377/Dropbox/nf10_sram_oq/etc/system.filters
+Done writing Tab View settings to:
+	/local/scratch/jz377/Dropbox/nf10_sram_oq/etc/system.gui
+Xilinx Platform Studio (XPS)
+Xilinx EDK 13.4 Build EDK_O.87xd
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Writing filter settings....
+Done writing filter settings to:
+	/local/scratch/jz377/Dropbox/nf10_sram_oq/etc/system.filters
+Done writing Tab View settings to:
+	/local/scratch/jz377/Dropbox/nf10_sram_oq/etc/system.gui
+Xilinx Platform Studio (XPS)
+Xilinx EDK 13.4 Build EDK_O.87xd
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Assigned Driver uartlite 2.00.a for instance mdm_0
+WARNING:EDK - No PLBV46 bus or AXI-interconnect is found in the system. Please manually connect MDM to a bus.
+Writing filter settings....
+Done writing filter settings to:
+	/local/scratch/jz377/Dropbox/nf10_sram_oq/etc/system.filters
+Done writing Tab View settings to:
+	/local/scratch/jz377/Dropbox/nf10_sram_oq/etc/system.gui
