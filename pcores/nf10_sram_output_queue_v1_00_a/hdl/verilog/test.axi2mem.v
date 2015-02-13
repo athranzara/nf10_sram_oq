@@ -177,6 +177,45 @@ end
         memclk = ~memclk;   // 250MHz
     end
     
+    reg [127:0] read_tuser = 0;
+    reg [255:0] read_tdata = 0;
+    reg [4:0] read_tstrb = 0;
+    reg [3:0] read_pkg_state =0;
+    reg read_tlast = 0;
+    reg [2:0] read_queue_id = 0;
+
+    always @ * begin
+            read_pkg_state = dout_mem[4:2];
+            read_queue_id = queue_id;
+            case (dout[4:2])
+            3'd0:   begin
+                        read_tuser = dout_mem[137:10];
+                        read_tstrb = dout_mem[9:5];
+                        read_tlast = dout_mem[1];
+                    end
+            3'd1:   begin
+                        read_tdata = dout_mem[201:10];
+                        read_tstrb = dout_mem[9:5];
+                        read_tlast = dout_mem[1];
+                    end
+            3'd2:   begin
+                        read_tdata = dout_mem[201:74];
+                        read_tstrb = dout_mem[9:5];
+                        read_tlast = dout_mem[1];
+                    end
+            3'd3:   begin
+                        read_tdata = dout_mem[201:138];
+                        read_tstrb = dout_mem[9:5];
+                        read_tlast = dout_mem[1];
+                    end
+            3'd4:   begin
+                        read_tdata = dout_mem[201:10];
+                        read_tstrb = dout_mem[9:5];
+                        read_tlast = dout_mem[1];
+                    end
+            endcase
+    
+    end
     
     
 endmodule
