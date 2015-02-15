@@ -64,7 +64,7 @@ localparam [7:0]    tuser_para2_2 = 8'b11101010;
     reg         packet_num;
     reg [1:0]   axis_state,next_axis_state;
     
-    localparam PACKET_LEN = 50;
+    localparam PACKET_LEN = 16;
     localparam GETREADY = 0;
     localparam TRANSMISSION = 1;
 
@@ -183,38 +183,40 @@ end
     reg [3:0] read_pkg_state =0;
     reg read_tlast = 0;
     reg [2:0] read_queue_id = 0;
+    
 
-    always @ * begin
-            read_pkg_state = dout_mem[4:2];
-            read_queue_id = queue_id;
+    always @ (posedge memclk) begin
+        if(dout_valid_mem) begin
+            read_pkg_state <= dout_mem[4:2];
+            read_queue_id <= queue_id;
             case (dout[4:2])
             3'd0:   begin
-                        read_tuser = dout_mem[137:10];
-                        read_tstrb = dout_mem[9:5];
-                        read_tlast = dout_mem[1];
+                        read_tuser <= dout_mem[137:10];
+                        read_tstrb <= dout_mem[9:5];
+                        read_tlast <= dout_mem[1];
                     end
             3'd1:   begin
-                        read_tdata = dout_mem[201:10];
-                        read_tstrb = dout_mem[9:5];
-                        read_tlast = dout_mem[1];
+                        read_tdata <= dout_mem[201:10];
+                        read_tstrb <= dout_mem[9:5];
+                        read_tlast <= dout_mem[1];
                     end
             3'd2:   begin
-                        read_tdata = dout_mem[201:74];
-                        read_tstrb = dout_mem[9:5];
-                        read_tlast = dout_mem[1];
+                        read_tdata <= dout_mem[201:74];
+                        read_tstrb <= dout_mem[9:5];
+                        read_tlast <= dout_mem[1];
                     end
             3'd3:   begin
-                        read_tdata = dout_mem[201:138];
-                        read_tstrb = dout_mem[9:5];
-                        read_tlast = dout_mem[1];
+                        read_tdata <= dout_mem[201:138];
+                        read_tstrb <= dout_mem[9:5];
+                        read_tlast <= dout_mem[1];
                     end
             3'd4:   begin
-                        read_tdata = dout_mem[201:10];
-                        read_tstrb = dout_mem[9:5];
-                        read_tlast = dout_mem[1];
+                        read_tdata <= dout_mem[201:10];
+                        read_tstrb <= dout_mem[9:5];
+                        read_tlast <= dout_mem[1];
                     end
             endcase
-    
+        end
     end
     
     
