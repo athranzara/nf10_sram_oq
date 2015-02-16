@@ -313,7 +313,7 @@ end
 
 
 
-async_fifo async_fifo (
+asyn_fifo_v1 async_fifo_v1 (
     .rst(reset),
     .wr_clk(clk),
     .rd_clk(memclk),
