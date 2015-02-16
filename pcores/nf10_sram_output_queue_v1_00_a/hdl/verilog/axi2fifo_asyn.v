@@ -49,6 +49,36 @@ assign tstrb_count[2] = (tstrb[4] && ~tstrb[8]) || (tstrb[12] && ~tstrb[16]) || 
 assign tstrb_count[1] = (^{tstrb[2],tstrb[4],tstrb[6],tstrb[8],tstrb[10],tstrb[12],tstrb[14],tstrb[16],tstrb[18],tstrb[20],tstrb[22],tstrb[24],tstrb[26],tstrb[28],tstrb[30]});
 assign tstrb_count[0] = ~(^tstrb);
 
+// combinational logical interface
+reg wren;
+
+always @ * begin
+    tready = 1'b0;
+    wren = 1'b0;
+
+    if(~w_almost_full) begin
+        tready = 1'b1;
+    end
+end
+
+// asynchrounos buffer
+reg buffer_wren;
+reg buffer_rden;
+
+always @ (posedge clk) begin
+    if (reset) begin
+        buffer_wren <= 1'b0;
+        buffer_rden <= 1'b0;
+    end
+    
+    else if (~w_almost_full) begin
+        if (tvalid) begin
+            buffer_wren = 1'b1;
+        end
+    end
+
+end
+
 
 
 async_fifo_buffer buffer(
