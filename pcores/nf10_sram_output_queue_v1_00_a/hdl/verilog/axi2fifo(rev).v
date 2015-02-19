@@ -313,25 +313,10 @@ end
 
 
 
-asyn_fifo_v1 async_fifo_v1 (
-    .rst(reset),
-    .wr_clk(clk),
-    .rd_clk(memclk),
-    .din(fifo_data),
-    .wr_en(wren_fifo),
-    .rd_en(rden),
-    .dout(dout),
-    .full(wfull),
-    .almost_full(w_almost_full),
-    .empty(rempty),
-    .almost_empty(r_almost_empty),
-    .valid(dout_valid)
-);
-
-// small synchornous fifo has timing problem
-//small_sync_fifo sfifo (
+//asyn_fifo_v1 async_fifo_v1 (
 //    .rst(reset),
-//    .clk(memclk),
+//    .wr_clk(clk),
+//    .rd_clk(memclk),
 //    .din(fifo_data),
 //    .wr_en(wren_fifo),
 //    .rd_en(rden),
@@ -342,6 +327,31 @@ asyn_fifo_v1 async_fifo_v1 (
 //    .almost_empty(r_almost_empty),
 //    .valid(dout_valid)
 //);
+
+assign dout_valid = ~rempty;
+
+fallthrough_small_async_fifo #(
+    .WIDTH(202),
+    .MAX_DEPTH_BITS(3)
+    )   
+    
+    async_fifo 
+    (
+     .din(fifo_data),     // Data in
+     .wr_en(wren_fifo),   // Write enable
+
+     .rd_en(rden),   // Read the next word
+
+     .dout(dout),    // Data out
+     .full(wfull),
+     .nearly_full(w_almost_full),
+     .empty(rempty),
+     .nearly_empty(r_almost_empty),
+
+     .reset(reset),
+     .rd_clk(memclk),
+     .wr_clk(clk)
+     );
 
 
 endmodule

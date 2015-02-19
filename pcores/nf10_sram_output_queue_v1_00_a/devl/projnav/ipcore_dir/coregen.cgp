@@ -1,22 +1,9 @@
-# Date: Mon Feb 16 16:10:43 2015
-
-SET addpads = true
-SET asysymbol = true
 SET busformat = BusFormatAngleBracketNotRipped
-SET createndf = true
 SET designentry = Verilog
 SET device = xc5vtx240t
 SET devicefamily = virtex5
 SET flowvendor = Foundation_ISE
-SET formalverification = false
-SET foundationsym = false
-SET implementationfiletype = Ngc
 SET package = ff1759
-SET removerpms = false
-SET simulationfiles = Behavioral
 SET speedgrade = -2
 SET verilogsim = true
 SET vhdlsim = false
-SET workingdirectory = ./tmp/
-
-# CRC: 2bfa607d
