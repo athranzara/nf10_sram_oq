@@ -43,6 +43,8 @@ parameter integer MEM_WORD_BYTES_LOG2   = 3
 //*******
 reg wren;
 reg rden;
+// rden has impact on the next memclk
+// while prev_rden indicate the impact of the current rden
 
 reg buffer_wren;
 reg buffer_rden;
@@ -92,21 +94,37 @@ always @ * begin
     tready = 1'b0;
     wren = 1'b0;
     rden = 1'b0;
-    
 
+    if (buffer_wren) begin
+        tready = 1'b1;
+    end
+    
     if(~w_almost_full ) begin
-        if (buffer_wren) begin
-            tready = 1'b1;
-        end        
-        wren = 1'b1;
+        if (tvalid && ~tlast)
+            wren = 1'b1;
     end    
     
-    if(~r_almost_empty) begin    
-        if ((pkg_state != 3'd4) && (pkg_state != 3'd0)) begin
-            if (output_enable) begin
-                rden = 1'b1;
-            end
-        end                         
+    if(dout_valid && output_enable) begin
+        rden = 1'b1;
+    end
+    
+
+end
+
+always @ * begin
+buffer_rden = 1'b0;
+    if (rden && (next_pkg_state != 3'd4) && (next_pkg_state != 3'd0))
+    buffer_rden = 1'b1;
+end
+
+reg prev_rden;
+
+always @ (posedge memclk) begin
+    if (reset) begin
+        prev_rden <=1'b0;
+    end
+    else begin
+        prev_rden <= rden;
     end
 end
 
@@ -163,28 +181,6 @@ always @ (*) begin
     end
 end
 
-// need package start indicator for reading side
-
-//reg [261:0] buffer_dout_syn;
-//reg         dout_valid_syn; 
-
-//always @ (posedge memclk) begin
-//    if (reset) begin
-//        buffer_dout_syn <= {(262){1'b0}};
-//        dout_valid_syn <= 1'b0;
-//    end
-//    else begin
-//        if (buffer_dout_valid) begin
-//            buffer_dout_syn <= buffer_dout;
-//            dout_valid_syn <= 1'b1;
-//        end
-//        else begin
-//            dout_valid_syn <= 1'b0;
-//        end
-//    end
-//end
-
-
 //
 always @ (posedge memclk) begin
     if (reset) begin
@@ -192,8 +188,6 @@ always @ (posedge memclk) begin
         pkg_state <= 3'd0;
         prev_tlast_read <= 1'b0;
         dout_data <= {(8*TDATA_WIDTH+5+1){1'b0}};
-
-//        buffer_rden <= 1'b0;
     end
     else begin
         if (rden) begin
@@ -209,7 +203,6 @@ always @ (posedge memclk) begin
         
         pkg_state <= next_pkg_state;
         dout_data <= next_dout_data;
-//        buffer_rden <= next_buffer_rden;    
     end
 
 end
@@ -217,13 +210,14 @@ end
 //reg pkg_changed;
 
 
-always @ (pkg_state or output_enable or dout_valid or read_pkg_start or prev_tlast_read) begin
-//    next_buffer_rden = 1'b0; 
 
-    next_pkg_state = pkg_state;
+always @ (*) begin
+next_pkg_state = pkg_state;
+
+//    next_pkg_state = 3'd0;
     
     case (pkg_state)
-        0: next_dout_data = {tuser/*need buffering*/, prev_tstrb_count_read, pkg_state, tlast_read, rden};
+        0: next_dout_data = {tuser/*need buffering*/, prev_tstrb_count_read, pkg_state, 1'b0, rden};
         1: next_dout_data = {tdata_read[191:0], prev_tstrb_count_read, pkg_state, tlast_read, rden};
         2: next_dout_data = {tdata_read[127:0], prev_tdata_read[255:192], prev_tstrb_count_read, pkg_state, tlast_read, rden};
         3: next_dout_data = {tdata_read[63:0], prev_tdata_read[255:128], prev_tstrb_count_read, pkg_state, tlast_read, rden};
@@ -233,120 +227,124 @@ always @ (pkg_state or output_enable or dout_valid or read_pkg_start or prev_tla
 
 // pkg not correct here.
 
-        if (pkg_state == 3'd0) begin
-            
-            if (output_enable) begin
-                if (dout_valid) begin
-                    next_pkg_state = pkg_state + 3'd1;
-                end
-                else begin
-                    next_pkg_state = pkg_state;
-                end
-            end
-        end
-        
-        else if (pkg_state == 3'd4) begin
-            if (output_enable) begin
-                if (dout_valid) begin
-                    if (~read_pkg_start) begin
+
+
+    case(pkg_state)
+    3'd0:   begin
+                if (rden) begin
                         next_pkg_state = 3'd1;
-
-                    end
-                    else begin
-                        next_pkg_state = 3'd0;
-
-                    end
-                end
-                else begin
-                    next_pkg_state = pkg_state;
                 end
             end
-        end
-        
-        else if ( (pkg_state == 3'd1) || (pkg_state == 3'd2) || (pkg_state == 3'd3) ) begin
-            if (output_enable) begin
-                if (dout_valid) begin
+            
+    3'd1:   begin /* prev_tlast_read not possible in package 1*/
+                if (rden) begin
+//                    if (prev_tlast_read) begin
+//                        next_pkg_state = 3'd0;
+//                    end
+//                    else begin
+                        next_pkg_state = 3'd2;
+//                    end
+                end
+            end
+    3'd2:   begin
+                if (rden) begin
                     if (prev_tlast_read) begin
                         next_pkg_state = 3'd0;
                     end
                     else begin
-                        next_pkg_state = pkg_state + 3'd1;
+                        next_pkg_state = 3'd3;
                     end
                 end
-                else begin
-                    next_pkg_state = pkg_state;
-                end
-            end   
-        end
-        
-        else begin
-            next_pkg_state = pkg_state;
-        end
+            end
     
+    3'd3:   begin
+                if (rden) begin
+                    if (prev_tlast_read) begin
+                        next_pkg_state = 3'd0;
+                    end
+                    else begin
+                        next_pkg_state = 3'd4;
+                    end
+                end
+            end
+    
+    3'd4:   begin
+                if (output_enable) begin
+                    if (dout_valid) begin
+                        if (~read_pkg_start) begin
+                            next_pkg_state = 3'd1;
+                        end
+                        else begin
+                            next_pkg_state = 3'd0;
+                        end
+                    end
+                end
+            end
+    default:    next_pkg_state = 3'd0;
+    endcase
+
+
 end
 
 
 // read test
     
     reg [127:0] test_tuser=0;
-    reg [255:0] test_tdata=0;
+    reg [255:0] test_tdata_cur=0;
+    reg [255:0] test_tdata_prev=0;
     reg [4:0]   test_tstrb=0;
     reg [3:0]   test_pkg_state=0;
     reg         test_tlast=0;
     reg [2:0] test_queue_id=0;
     
 
-    always @ * begin
-        if(dout_valid) begin
-            test_pkg_state = dout_data[4:2];
-            case (dout_data[4:2])
-            3'd0:   begin
-                        test_tuser = dout_data[137:10];
-                        test_tstrb = dout_data[9:5];
-                        test_tlast = dout_data[1];
-                    end
-            3'd1:   begin
-                        test_tdata = dout_data[201:10];
-                        test_tstrb = dout_data[9:5];
-                        test_tlast = dout_data[1];
-                    end
-            3'd2:   begin
-                        test_tdata = dout_data[201:74];
-                        test_tstrb = dout_data[9:5];
-                        test_tlast = dout_data[1];
-                    end
-            3'd3:   begin
-                        test_tdata = dout_data[201:138];
-                        test_tstrb = dout_data[9:5];
-                        test_tlast = dout_data[1];
-                    end
-            3'd4:   begin
-                        test_tdata = dout_data[201:10];
-                        test_tstrb = dout_data[9:5];
-                        test_tlast = dout_data[1];
-                    end
-            endcase
-        end
-    end
-
-assign dout_valid = test;
-reg test;
 always @ (posedge memclk) begin
-    test = 1'b1;
+    test_pkg_state <= dout_data[4:2];
+    case (dout_data[4:2])
+    3'd0:   begin
+                test_tuser <= dout_data[137:10];
+                test_tstrb <= dout_data[9:5];
+                test_tlast <= dout_data[1];
+            end
+    3'd1:   begin
+                test_tdata_cur <= dout_data[201:10];
+                test_tstrb <= dout_data[9:5];
+                test_tlast <= dout_data[1];
+            end
+    3'd2:   begin
+                test_tdata <= dout_data[201:74];
+                test_tstrb <= dout_data[9:5];
+                test_tlast <= dout_data[1];
+            end
+    3'd3:   begin
+                test_tdata <= dout_data[201:138];
+                test_tstrb <= dout_data[9:5];
+                test_tlast <= dout_data[1];
+            end
+    3'd4:   begin
+                test_tdata <= dout_data[201:10];
+                test_tstrb <= dout_data[9:5];
+                test_tlast <= dout_data[1];
+            end
+    endcase
 end
 
+assign dout_valid = ~r_almost_empty;
+
+
 // do not have dout_valid
+// this fifo will not output valid number until the first rden.
 fallthrough_small_async_fifo #(
     .WIDTH(262),
     .MAX_DEPTH_BITS(3)
-    )   
+    )
     
     buffer_data 
     (
      .din(axi_din),     // Data in
      .wr_en(buffer_wren),   // Write enable
 
-     .rd_en(rden),   // Read the next word
+     .rd_en(buffer_rden),   // Read the next word
 
      .dout(buffer_dout),    // Data out
      .full(wfull),
@@ -358,9 +356,21 @@ fallthrough_small_async_fifo #(
      .rd_clk(memclk),
      .wr_clk(clk)
      );
-     
-     
 
-    
+
+//buffer_axis_data buffer_data(
+//.rst(reset),
+//.wr_clk(clk),
+//.rd_clk(memclk),
+//.din(axi_din),
+//.wr_en(wren),
+//.rd_en(buffer_rden),
+//.dout(buffer_dout),
+//.full(wfull),
+//.almost_full(w_almost_full),
+//.empty(rempty),
+//.almost_empty(r_almost_empty),
+//.valid(dout_valid)
+//);
 
 endmodule

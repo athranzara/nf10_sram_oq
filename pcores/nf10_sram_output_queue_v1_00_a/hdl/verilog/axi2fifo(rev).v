@@ -328,7 +328,7 @@ end
 //    .valid(dout_valid)
 //);
 
-assign dout_valid = ~rempty;
+assign dout_valid = ~r_almost_empty;
 
 fallthrough_small_async_fifo #(
     .WIDTH(202),

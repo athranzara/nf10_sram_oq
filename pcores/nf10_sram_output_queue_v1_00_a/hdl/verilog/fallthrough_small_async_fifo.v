@@ -15,8 +15,9 @@
   module fallthrough_small_async_fifo
     #(parameter WIDTH = 72,
       parameter MAX_DEPTH_BITS = 3,
-      parameter ALMOST_FULL_SIZE = MAX_DEPTH_BITS-1,
-      parameter ALMOST_EMPTY_SIZE = 1)
+      parameter ALMOST_FULL_SIZE = 2**MAX_DEPTH_BITS-1,
+      parameter ALMOST_EMPTY_SIZE = 1
+   )
     (
                    
      input [WIDTH-1:0]  din,     // Data in
@@ -39,7 +40,8 @@
      #(.DSIZE (WIDTH),
        .ASIZE (MAX_DEPTH_BITS),
        .ALMOST_FULL_SIZE (ALMOST_FULL_SIZE),
-       .ALMOST_EMPTY_SIZE (ALMOST_EMPTY_SIZE))
+       .ALMOST_EMPTY_SIZE (ALMOST_EMPTY_SIZE)
+      )
        fifo
         (.wdata (din),
          .winc (wr_en),

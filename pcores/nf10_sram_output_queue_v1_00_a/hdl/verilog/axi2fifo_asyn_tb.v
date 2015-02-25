@@ -72,11 +72,42 @@ reg [255:0] tdata2;
 reg         packet_num;
 reg [1:0]   axis_state,next_axis_state;
 
-localparam PACKET_LEN = 50;
+localparam PACKET_LEN = 20;
 localparam GETREADY = 0;
 localparam TRANSMISSION = 1;
 
+reg [255:0] next_tdata;
+reg [127:0] next_tuser;
+reg [31:0]  next_tstrb;
+reg         next_tvalid;
+
 /* axis simulator*/
+//always @ (posedge clk) begin
+//    if (reset) begin
+//        axis_state <= 0;
+//        tdata <= {256{1'b0}};
+//        tuser <= {128{1'b0}};
+//        tstrb <= {32{1'b0}};
+//        tvalid<= 1'b0;
+//    end
+//    else begin
+//        axis_state <= next_axis_state;
+//        tdata <= next_tdata;
+//        tuser <= next_tuser;
+//        tstrb <= next_tstrb;
+//        tvalid<= next_tvalid;
+//    end
+//end
+
+//always @ * begin
+//next_axis_state = axis_state;
+//next_tdata = tdata;
+//next_tuser = tuser;
+//next_tstrb = tstrb;
+//next_tvalid = tvalid;
+
+//end
+
 always @ * begin
     if (reset) begin
         axis_state = 0;
@@ -88,15 +119,19 @@ always @ * begin
 
 end
 
-always @ * begin
-    tlast = 1'b0;
-    tstrb = tstrb;
-    if (i == PACKET_LEN) begin
-        tlast = 1'b1;
-        tstrb = 32'h000fffff;
+    always @ * begin
+        tlast = 1'b0;
+        tstrb = tstrb;
+        if (i == PACKET_LEN) begin
+            tlast = 1'b1;
+            tstrb = 32'h000fffff;
+        end
+
     end
 
-end
+//always @ * begin
+//    next_axis_state = 
+//end
 
 always @ (posedge clk) begin
     case (axis_state)
@@ -120,19 +155,17 @@ always @ (posedge clk) begin
                             end
                             next_axis_state <= TRANSMISSION;
                         end
+                        
 
                     end
     
     TRANSMISSION:   begin
-                        if (tready) begin
-                            if (tlast) begin
-                                next_axis_state <= GETREADY;
-
-                            end
-                            else begin
-                            tdata = tdata + 256'd1;
-                            i = i + 1;
-                            end
+                        if (tlast) begin
+                            next_axis_state <= GETREADY;
+                        end
+                        else if (tready) begin
+                        tdata <= tdata + 256'd1;
+                        i = i + 1;
                         end
                     end
                     
@@ -172,6 +205,7 @@ end
         reset = 1'b0;
         memreset = 1'b0;
 		// Add stimulus here
+		output_enable = 1'b1;
 
 
 	end

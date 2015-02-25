@@ -107,10 +107,11 @@ always @ (posedge clk) begin
 
                             end
                             else begin
-                            tdata = tdata + 256'd1;
-                            i = i + 1;
+                            tdata <= tdata + 256'd1;
+                            i <= i + 1;
                             end
                         end
+                        else tdata <= tdata;
                     end
                     
     default:        begin

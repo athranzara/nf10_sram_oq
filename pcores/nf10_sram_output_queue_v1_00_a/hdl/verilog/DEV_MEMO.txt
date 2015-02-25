@@ -1,1 +1,5 @@
 current axi to memory test shows that certain length packet will not triger the next packege header reading, such as a length of 42.
+
+current problem is the axi2fifo_asyn will have a extra tlast
+
+error when the length is 32 (solved when reduced almost full depth)
