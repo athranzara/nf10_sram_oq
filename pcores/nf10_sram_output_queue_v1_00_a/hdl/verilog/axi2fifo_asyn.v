@@ -1,5 +1,6 @@
-// This module attempt to achieve 40 Gb/s however, the output reading is not correct
-// Further debuging is requried.
+// This module attempt to achieve 40 Gb/s however, the output reading is correct
+// However, it is not able to achieve 40 Gb/s.
+// Reason: the asyn_fifo is not responding to the read_enable only if the r_almost_empty is set off for 2 clocks
 
 
 module Axi2Fifo_asyn #(
@@ -72,7 +73,7 @@ wire [4:0]  tstrb_count;
 wire [4:0]  tstrb_count_read;
 reg [4:0]   prev_tstrb_count_read;
 
-wire     buffer_dout_valid;
+reg     buffer_dout_valid;
 
 //*********
 
@@ -91,20 +92,16 @@ assign tstrb_count[0] = ~(^tstrb);
 
 
 always @ * begin
-    tready = 1'b0;
     wren = 1'b0;
     rden = 1'b0;
-
-    if (buffer_wren) begin
-        tready = 1'b1;
-    end
     
     if(~w_almost_full ) begin
-        if (tvalid && ~tlast)
+        if (tvalid) begin
             wren = 1'b1;
+        end
     end    
     
-    if(dout_valid && output_enable) begin
+    if(buffer_dout_valid && output_enable) begin
         rden = 1'b1;
     end
     
@@ -113,20 +110,15 @@ end
 
 always @ * begin
 buffer_rden = 1'b0;
-    if (rden && (next_pkg_state != 3'd4) && (next_pkg_state != 3'd0))
+tready = 1'b0;
+    if (rden && (pkg_state != 3'd0) && (pkg_state != 3'd4))
     buffer_rden = 1'b1;
-end
-
-reg prev_rden;
-
-always @ (posedge memclk) begin
-    if (reset) begin
-        prev_rden <=1'b0;
-    end
-    else begin
-        prev_rden <= rden;
+    
+    if (wren) begin
+        tready = 1'b1;
     end
 end
+
 
 // asynchrounos buffer
 // in which condition to write axi to the buffer?
@@ -171,7 +163,7 @@ end
 always @ (*) begin
     next_read_pkg_start = read_pkg_start;
     
-    if (dout_valid) begin
+    if (buffer_dout_valid) begin
         if (tlast_read) begin
             next_read_pkg_start = 1'b1;
         end
@@ -190,7 +182,7 @@ always @ (posedge memclk) begin
         dout_data <= {(8*TDATA_WIDTH+5+1){1'b0}};
     end
     else begin
-        if (rden) begin
+        if (buffer_rden) begin
             prev_tdata_read <= tdata_read;
             prev_tlast_read <= tlast_read;
             prev_tstrb_count_read <= tstrb_count_read;
@@ -207,14 +199,11 @@ always @ (posedge memclk) begin
 
 end
 
-//reg pkg_changed;
-
 
 
 always @ (*) begin
 next_pkg_state = pkg_state;
 
-//    next_pkg_state = 3'd0;
     
     case (pkg_state)
         0: next_dout_data = {tuser/*need buffering*/, prev_tstrb_count_read, pkg_state, 1'b0, rden};
@@ -270,7 +259,7 @@ next_pkg_state = pkg_state;
     
     3'd4:   begin
                 if (output_enable) begin
-                    if (dout_valid) begin
+                    if (buffer_dout_valid) begin
                         if (~read_pkg_start) begin
                             next_pkg_state = 3'd1;
                         end
@@ -290,6 +279,7 @@ end
 // read test
     
     reg [127:0] test_tuser=0;
+    reg [255:0] test_tdata=0;
     reg [255:0] test_tdata_cur=0;
     reg [255:0] test_tdata_prev=0;
     reg [4:0]   test_tstrb=0;
@@ -307,17 +297,19 @@ always @ (posedge memclk) begin
                 test_tlast <= dout_data[1];
             end
     3'd1:   begin
-                test_tdata_cur <= dout_data[201:10];
+                test_tdata <= dout_data[201:10];
                 test_tstrb <= dout_data[9:5];
                 test_tlast <= dout_data[1];
             end
     3'd2:   begin
                 test_tdata <= dout_data[201:74];
+//                test_tdata_prev <= dout_data[73:10];
                 test_tstrb <= dout_data[9:5];
                 test_tlast <= dout_data[1];
             end
     3'd3:   begin
                 test_tdata <= dout_data[201:138];
+//                test_tdata_prev <= dout_data[137:10];
                 test_tstrb <= dout_data[9:5];
                 test_tlast <= dout_data[1];
             end
@@ -329,8 +321,24 @@ always @ (posedge memclk) begin
     endcase
 end
 
-assign dout_valid = ~r_almost_empty;
 
+//delay buffer_dout_valid 
+always @ (posedge memclk) begin
+    if (reset) begin
+        buffer_dout_valid = 1'b0;
+    end
+    else begin
+        if (~r_almost_empty) begin
+            buffer_dout_valid = 1'b1;
+        end
+        else begin
+            buffer_dout_valid = 1'b0;
+        end
+    end
+end
+// This is not correct
+
+assign dout_valid = buffer_dout_valid;
 
 // do not have dout_valid
 // this fifo will not output valid number until the first rden.
@@ -342,7 +350,7 @@ fallthrough_small_async_fifo #(
     buffer_data 
     (
      .din(axi_din),     // Data in
-     .wr_en(buffer_wren),   // Write enable
+     .wr_en(wren),   // Write enable
 
      .rd_en(buffer_rden),   // Read the next word
 
@@ -356,6 +364,39 @@ fallthrough_small_async_fifo #(
      .rd_clk(memclk),
      .wr_clk(clk)
      );
+
+// small asyn fifo for tuser
+
+reg [TUSER_WIDTH*8-1:0] tuser_read;
+reg wren_tuser_buffer;
+reg rden_tuser_buffer;
+reg wfull_tuser_buffer;
+reg rempty_tuser_buffer;
+
+
+
+
+fallthrough_small_async_fifo #(
+    .WIDTH(128),
+    .MAX_DEPTH_BITS(3)
+)
+    tuser_buffer
+    (
+    .din(tuser),     // Data in
+    .wr_en(wren_tuser_buffer),   // Write enable
+
+    .rd_en(rden_tuser_buffer),   // Read the next word
+
+    .dout(tuser_read),    // Data out
+    .full(wfull_tuser_buffer),
+    .nearly_full(),
+    .empty(rempty_tuser_buffer),
+    .nearly_empty(),
+
+    .reset(reset),
+    .rd_clk(memclk),
+    .wr_clk(clk)
+    );
 
 
 //buffer_axis_data buffer_data(

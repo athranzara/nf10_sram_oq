@@ -1,27 +1,5 @@
 `timescale 1ns / 1ps
 
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   19:10:55 02/16/2015
-// Design Name:   Axi2Fifo_asyn
-// Module Name:   /local/scratch/jz377/git_repo/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/hdl/verilog/axi2fifo_asyn_tb.v
-// Project Name:  nf10_sram_output_queue
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: Axi2Fifo_asyn
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-////////////////////////////////////////////////////////////////////////////////
-
 module axi2fifo_asyn_tb;
 
 	// Inputs
@@ -66,10 +44,11 @@ localparam [7:0]    tuser_para2 = 8'b10101111;
 localparam [23:0]   tuser_para3 = 24'b1;
 localparam [7:0]    tuser_para2_2 = 8'b11101010;
 
-reg [7:0]   i;
+reg [7:0]   i,next_i;
 reg [255:0] tdata1;
 reg [255:0] tdata2;
 reg         packet_num;
+reg         next_packet_num;
 reg [1:0]   axis_state,next_axis_state;
 
 localparam PACKET_LEN = 20;
@@ -80,107 +59,106 @@ reg [255:0] next_tdata;
 reg [127:0] next_tuser;
 reg [31:0]  next_tstrb;
 reg         next_tvalid;
+reg         next_tlast;
 
 /* axis simulator*/
-//always @ (posedge clk) begin
-//    if (reset) begin
-//        axis_state <= 0;
-//        tdata <= {256{1'b0}};
-//        tuser <= {128{1'b0}};
-//        tstrb <= {32{1'b0}};
-//        tvalid<= 1'b0;
-//    end
-//    else begin
-//        axis_state <= next_axis_state;
-//        tdata <= next_tdata;
-//        tuser <= next_tuser;
-//        tstrb <= next_tstrb;
-//        tvalid<= next_tvalid;
-//    end
-//end
-
-//always @ * begin
-//next_axis_state = axis_state;
-//next_tdata = tdata;
-//next_tuser = tuser;
-//next_tstrb = tstrb;
-//next_tvalid = tvalid;
-
-//end
-
-always @ * begin
+always @ (posedge clk) begin
     if (reset) begin
-        axis_state = 0;
-        next_axis_state = 0;
+        axis_state <= 0;
+        tdata <= {256{1'b0}};
+        tuser <= {128{1'b0}};
+        tstrb <= {32{1'b0}};
+        tvalid<= 1'b0;
+        tlast <= 1'b0;
+        packet_num = 1'b0;
+        i <= 0;
     end
     else begin
-        axis_state = next_axis_state;
-    end
-
-end
-
-    always @ * begin
-        tlast = 1'b0;
-        tstrb = tstrb;
-        if (i == PACKET_LEN) begin
-            tlast = 1'b1;
-            tstrb = 32'h000fffff;
+        axis_state <= next_axis_state;
+        tdata <= next_tdata;
+        tuser <= next_tuser;
+        tstrb <= next_tstrb;
+        tvalid<= next_tvalid;
+        tlast <=next_tlast;
+        packet_num <= next_packet_num;
+        if (tlast) begin
+            i = 0;
+        end
+        else if (tready) begin
+            i <= next_i;
         end
 
     end
+end
 
-//always @ * begin
-//    next_axis_state = 
-//end
+always @ * begin
+next_axis_state = axis_state;
+next_tdata = tdata;
+next_tuser = tuser;
+next_tstrb = tstrb;
+next_tvalid = tvalid;
+next_tlast = tlast;
+next_packet_num = packet_num;
 
-always @ (posedge clk) begin
     case (axis_state)
-    GETREADY:       begin
-                        if (~reset) begin
-                            if (packet_num == 0) begin
-                                tdata <= tdata1;
-                                tuser <= {tuser_para1,tuser_para2,tuser_para3};
-                                tvalid <= 1'b1;
-                                tstrb <= 32'hffffffff;
-                                packet_num <= 1;
-                                i = 0;
-                            end
-                            else if (packet_num == 1) begin
-                                tstrb <= 32'hffffffff;
-                                tdata <= tdata2;
-                                tuser <= {tuser_para1,tuser_para2_2,tuser_para3};
-                                tvalid <= 1'b1;
-                                packet_num <=0;
-                                i = 0;
-                            end
-                            next_axis_state <= TRANSMISSION;
-                        end
-                        
+    GETREADY:
+    begin
+        if (~reset) begin
+            case (packet_num)
+                1'b0:
+                begin
+                    next_tdata = tdata1;
+                    next_tuser = {tuser_para1,tuser_para2,tuser_para3};
+                    next_tvalid = 1'b1;
+                    next_tstrb = 32'hffffffff;
+                    next_packet_num = 1'b1;
+                end
+                
+                1'b1:
+                begin
+                    next_tstrb = 32'hffffffff;
+                    next_tdata = tdata2;
+                    next_tuser = {tuser_para1,tuser_para2_2,tuser_para3};
+                    next_tvalid = 1'b1;
+                    next_packet_num = 1'b0;
+                end
+            endcase
+            next_axis_state = TRANSMISSION;
+            next_tvalid = 1'b1;
+        end
+    end
+    
+    TRANSMISSION:
+    begin
+        if (tready) begin
+            if (i == (PACKET_LEN-1)) begin
+                next_tlast = 1'b1;
+            end
+            else begin
+                next_tlast = 1'b0;
+            end
+            
+            if (tlast) begin
+                next_axis_state = GETREADY;
+                next_tvalid = 1'b0;
+                next_i = 0;
+                next_tdata = 0;
+            end
+            else begin
+                next_tdata = tdata + 256'd1;
+                next_i = i + 1;
+            end
+        end
+        
+        
 
-                    end
+    end
     
-    TRANSMISSION:   begin
-                        if (tlast) begin
-                            next_axis_state <= GETREADY;
-                        end
-                        else if (tready) begin
-                        tdata <= tdata + 256'd1;
-                        i = i + 1;
-                        end
-                    end
-                    
-    default:        begin
-                    tvalid <= 0;
-                    tdata <= 256'bz;
-                    tuser <= 128'bz;
-                    tstrb <= 32'bz;
-                    /*pause*/
-                    end
     endcase
-    
-    
 
 end
+
+
 
 /* end of axis simulator*/
 
