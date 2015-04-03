@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-02-09T17:22:08</DateModified>
-  <ModuleName>AxiFifoArbiter</ModuleName>
+  <DateModified>2015-04-03T19:00:06</DateModified>
+  <ModuleName>Axi2Fifo</ModuleName>
   <SummaryTimeStamp>2015-02-03T20:13:12</SummaryTimeStamp>
-  <SavedFilePath>/local/scratch/jz377/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/iseconfig/Axi2Fifo.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/local/scratch/jz377/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/</ImplementationReportsDirectory>
+  <SavedFilePath>/local/scratch/jz377/git_repo/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/iseconfig/Axi2Fifo.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/local/scratch/jz377/git_repo/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/</ImplementationReportsDirectory>
   <DateInitialized>2015-02-09T17:22:08</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

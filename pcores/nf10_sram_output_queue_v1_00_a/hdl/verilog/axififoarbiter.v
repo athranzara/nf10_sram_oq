@@ -33,6 +33,8 @@ reg [2:0] prev_state;
 reg [2:0] next_state;
 reg fetch_done;
 reg prev_fetch_done;
+reg [QUEUE_ID_WIDTH-1:0]    queue_id_arb;
+
 
 always @ (posedge memclk) begin
     if (reset) begin
@@ -87,9 +89,10 @@ end
 always @ (posedge memclk) begin
     case (state)
         0:  begin
-                fetch_done <=0;
+                fetch_done <=1'b0;
                 oq_reg <= 5'b0;
                 rra_last <= 1'b0;
+                queue_id_arb <= 3'd0;
             end
         
         1:  begin
@@ -97,6 +100,8 @@ always @ (posedge memclk) begin
                     oq_reg <= oq;
                     fetch_done <= 1'b1;
                 end
+                rra_last <= 1'b0;
+                queue_id_arb <= 3'd0;
             end
 
         
@@ -105,7 +110,7 @@ always @ (posedge memclk) begin
                 if (din_valid) begin
                     casex(oq_reg)
                         5'bxxxx1:begin
-                            queue_id <= 3'd0;
+                            queue_id_arb <= 3'd0;
                             if ((oq & 5'b11110) == 5'b00000) begin
                                 rra_last <= 1'b1;
                                 oq_reg <= oq;
@@ -116,7 +121,7 @@ always @ (posedge memclk) begin
                             end           
                         end
                         5'bxxx1x:begin
-                            queue_id <= 3'd1;
+                            queue_id_arb <= 3'd1;
                             if ((oq_reg & 5'b11101) == 5'b00000) begin
                                 rra_last <= 1'b1;
                                 oq_reg <= oq;
@@ -127,7 +132,7 @@ always @ (posedge memclk) begin
                             end
                         end
                         5'bxx1xx:begin
-                            queue_id <= 3'd2;
+                            queue_id_arb <= 3'd2;
                             if ((oq_reg & 5'b11011) == 5'b00000) begin
                                 rra_last <= 1'b1;
                                 oq_reg <= oq;
@@ -138,7 +143,7 @@ always @ (posedge memclk) begin
                             end
                         end
                         5'bx1xxx:begin
-                            queue_id <= 3'd3;
+                            queue_id_arb <= 3'd3;
                             if ((oq_reg & 5'b10111) == 5'b00000) begin
                                 rra_last <= 1'b1;
                                 oq_reg <= oq;
@@ -149,12 +154,12 @@ always @ (posedge memclk) begin
                             end
                         end
                         5'b1xxxx:begin
-                            queue_id <= 3'd4;
+                            queue_id_arb <= 3'd4;
                             rra_last <= 1'b1;
                             oq_reg <= oq;
                         end
                         default:begin
-                            queue_id <= 3'dz;
+                            queue_id_arb <= 3'dz;
                             oq_reg <= oq;
                         end
                     endcase
@@ -167,7 +172,7 @@ end
 always @ * begin
     dout_valid = 1'b0;
     dout = 202'b0;
-    if ( (state == 3'd2) && ~ fetch_done && (next_state !== 3'd1))
+    if ( (state == 3'd2) /*&& ~fetch_done && (state !== 3'd1)*/)
         dout_valid = 1'b1;
     if (dout_valid)
         dout = din;
@@ -175,6 +180,16 @@ end
 
 
 assign next_pkg_en = rra_last;
+
+always @ (posedge memclk) begin
+    if (reset) begin
+        queue_id <= 3'dz;
+    end
+    else begin
+        queue_id <= queue_id_arb; 
+    end
+    
+end
 
 
 

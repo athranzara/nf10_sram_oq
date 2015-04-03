@@ -51,7 +51,7 @@ reg         packet_num;
 reg         next_packet_num;
 reg [1:0]   axis_state,next_axis_state;
 
-localparam PACKET_LEN = 20;
+localparam PACKET_LEN =1;
 localparam GETREADY = 0;
 localparam TRANSMISSION = 1;
 

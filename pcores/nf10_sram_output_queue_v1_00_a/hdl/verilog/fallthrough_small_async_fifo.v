@@ -15,7 +15,7 @@
   module fallthrough_small_async_fifo
     #(parameter WIDTH = 72,
       parameter MAX_DEPTH_BITS = 3,
-//      parameter ALMOST_FULL_SIZE = 2**MAX_DEPTH_BITS-1,
+      parameter ALMOST_FULL_SIZE = 2**MAX_DEPTH_BITS-1,
       parameter ALMOST_EMPTY_SIZE = 1
    )
     (
