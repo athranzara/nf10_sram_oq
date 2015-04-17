@@ -1,0 +1,5 @@
+The sram output queue pcore is not used for data streaming. It is design to offer full functionality to offer 40Gb/s for single destination project such as reference_nic.
+
+For multiple destinations, due to the reduction of bandwidth for a single queue, it might drop packets. Hence the length of the packet should have impact on the output queue.
+
+The fifo to sram module behave same as what bram output queue. It will consider if the destination have enough size for the whole packet, otherwise, it would drop the packet.

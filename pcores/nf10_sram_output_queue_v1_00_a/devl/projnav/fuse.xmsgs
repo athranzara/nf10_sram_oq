@@ -5,5 +5,11 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="568" delta="unknown" >"/local/scratch/jz377/git_repo/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/../../hdl/verilog/sigen.v" Line 182: Constant value is truncated to fit in &lt;<arg fmt="%d" index="1">2</arg>&gt; bits.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="35" delta="unknown" >"/local/scratch/jz377/git_repo/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/../../hdl/verilog/module_prototype.v" Line 92: &lt;<arg fmt="%s" index="1">output_enable</arg>&gt; is already implicitly declared earlier.
+</msg>
+
 </messages>
 

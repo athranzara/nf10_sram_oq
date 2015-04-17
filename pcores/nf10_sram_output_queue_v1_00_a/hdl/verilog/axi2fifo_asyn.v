@@ -203,6 +203,7 @@ next_oq = oq;
 
     if (pkg_state == 3'd0)
         next_oq = tuser_read[DST_POS] | (tuser_read[DST_POS + 2] << 1) | (tuser_read[DST_POS + 4] << 2) | (tuser_read[DST_POS + 6] << 3) | ((tuser_read[DST_POS + 1] | tuser_read[DST_POS + 3] | tuser_read[DST_POS + 5] | tuser_read[DST_POS + 7]) << 4);
+
 // pkg not correct here.
 
 
