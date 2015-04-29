@@ -1,14 +1,4 @@
 INFO:sim:172 - Generating IP...
-WARNING:sim:100 - The Simulation File Type <Behavioral> is not valid for this
-   core. Overriding with File Type <structural>.
 Customizing IP...
-Release 13.4 - Xilinx CORE Generator IP GUI Launcher O.87xd (lin64)
-Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
-ERROR:coreutil:1012 - Command
-   '/local/scratch/jz377/Xilinx/13.4/ISE_DS/ISE/bin/lin64/_ipguilauncher
-   -cg_exc_inp ./tmp/_cg/xil_mFzg2q.in -cg_exc_out ./tmp/_cg/xil_mFzg2q.out
-   -namelock' returned a non-zero exit code '1'
-An Error occurred during Customization.
-ERROR:sim - Failed to generate 'cs'.  An error occurred. Please see the log for
-   details.
-Wrote CGP file for project 'cs'.
+Cancelled Customization.
+Wrote CGP file for project 'sram_controller'.

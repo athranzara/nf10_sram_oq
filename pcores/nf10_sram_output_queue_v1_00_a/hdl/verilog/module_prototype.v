@@ -89,24 +89,228 @@ end
 
 //template test inputs for current module
 
-reg output_enable, nxt_output_enable;
+reg output_enable;
 
 always @ (posedge memclk) begin
     if (reset) begin
-        output_enable <= 1'b0;
+        ctrl_state = 1'b0;
     end
     else begin
-        output_enable <=nxt_output_enable;
+        ctrl_state = next_ctrl_state;
     end
 end
+
+
+reg ctrl_state, next_ctrl_state;
+
+//always @ * begin
+//output_enable = 1'b0;
+//next_ctrl_state = ctrl_state;
+
+//if (dout_valid)
+//    output_enable = 1'b1;
+
+////// delayed output_enable perform better
+////    case (ctrl_state)
+////    0:
+////        begin
+////            if (dout_valid) begin
+////                next_ctrl_state = 1'b1;
+////            end
+////        end
+////    
+////    
+////    1:
+////        begin
+////            if (dout_valid) begin
+////                output_enable = 1'b1;
+////            end
+////            else begin
+////                next_ctrl_state = 1'b0;
+////            end
+////        end
+////    endcase
+//    
+//end
+
+
+//template test for current module
+
+
+
+
+
+
+
+
+
+// fifo to axi template
+
+reg wr_f2a;
+reg rd_f2a;
+reg wfull_f2a, w_almost_full_f2a;
+reg rempty_f2a, r_almost_empty_f2a;
+
+reg [201:0] dout_pkg;
+
+//// write from mememry to fifo
+//always @ (posedge memclk) begin
+//    if (reset) begin
+//        
+//    end
+
+//end
+
+always @ * begin
+    wr_f2a = 1'b0;
+    // output_enable template
+    output_enable = 1'b0;
+    
+    
+    if (dout_valid && ~w_almost_full_f2a) begin
+        wr_f2a = 1'b0;
+        // output_enable template
+        output_enable = 1'b1;
+    end
+end
+
+
+//
+
+fallthrough_small_async_fifo #(
+    .WIDTH(202),
+    .MAX_DEPTH_BITS(4)
+    )
+    
+    fifo2axi 
+    (
+     .din(dout),     // Data in
+     .wr_en(wr_f2a),   // Write enable
+
+     .rd_en(rd_f2a),   // Read the next word
+
+     .dout(dout_pkg),    // Data out
+     .full(wfull_f2a),
+     .nearly_full(w_almost_full_f2a),
+     .empty(rempty_f2a),
+     .nearly_empty(r_almost_empty_f2a),
+
+     .reset(reset),
+     .rd_clk(memclk),
+     .wr_clk(clk)
+     );
+//
+
+// read from f2a
+always @ (posedge clk) begin
+    if (reset) begin
+    
+    end
+    else begin
+    
+    end
+end
+
+always @ * begin
+rd_f2a = 1'b0;
+    case 
+    
+    endcase
+
+end
+
+// axi simulator
+
+reg s_axi_state,nxt_s_axi_state;
+reg s_axi_tready;
+
+always @ (posedge clk) begin
+    if (reset) begin
+        s_axi_state = 1'b0;
+    end
+    else begin
+        s_axi_state = nxt_s_axi_state;
+    end
+
+end
+
+always @ * begin
+nxt_s_axi_state = s_axi_state;
+s_axi_tready = 1'b0;
+
+    case (s_axi_state)
+    0:
+        begin
+            if (~r_almost_empty_f2a)
+                nxt_s_axi_state = 1'b1;
+        end
+    1:
+        begin
+            if (r_almost_empty_f2a) begin
+                nxt_s_axi_state = 1'b0;
+            end
+            else
+                s_axi_tready = 1'b1;
+        end
+    endcase
+
+end
+
+
+// read test
+// generate input instant
+    
+    reg [127:0] test_tuser=0;
+    reg [255:0] test_tdata1=0;
+    reg [255:0] test_tdata2=0;
+    reg [255:0] test_tdata_cur=0;
+    reg [255:0] test_tdata_prev=0;
+    reg [4:0]   test_tstrb=0;
+    reg [3:0]   test_pkg_state=0;
+    reg         test_tlast=0;
+    reg [2:0] test_queue_id=0;
+    
+
 
 
 always @ * begin
-nxt_output_enable = output_enable;
-    if (dout_valid) begin
-        nxt_output_enable = 1'b1;
-    end
+
+    test_pkg_state = dout[4:2];
+    case (dout[4:2])
+    3'd0:   begin
+                test_tuser = dout[137:10];
+                test_tstrb = dout[9:5];
+                test_tlast = dout[1];
+            end
+    3'd1:   begin
+                test_tdata1 = dout[201:10];
+                test_tdata2 = 0;
+                test_tstrb = dout[9:5];
+                test_tlast = dout[1];
+            end
+    3'd2:   begin
+                test_tdata1 = dout[201:74];
+                test_tdata2 = dout[73:10];
+                test_tstrb = dout[9:5];
+                test_tlast = dout[1];
+            end
+    3'd3:   begin
+                test_tdata1 = dout[201:138];
+                test_tdata2 = dout[137:10];
+                test_tstrb = dout[9:5];
+                test_tlast = dout[1];
+            end
+    3'd4:   begin
+                test_tdata1 = dout[201:10];
+                test_tstrb = dout[9:5];
+                test_tlast = dout[1];
+            end
+    endcase
+
+
 end
-//template test for current module
+
+
+
 
 endmodule

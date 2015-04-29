@@ -69,7 +69,7 @@ wire [TUSER_WIDTH*8-1:0] tuser_read;
 wire [4:0]  tstrb_count;
 wire [4:0]  tstrb_count_read;
 reg [4:0]   prev_tstrb_count_read;
-
+reg [5:0]   next_oq;
 
 
 
@@ -232,6 +232,8 @@ always @ (posedge memclk) begin
         prev_tdata_read <={(8*TDATA_WIDTH){1'b0}};
         pkg_state <= 3'd0;
         prev_tlast_read <= 1'b0;
+        prev_tstrb_count_read <= 5'b0;
+        oq <= 5'b0;
     end
     else begin
         if (rden_axis) begin
@@ -240,16 +242,31 @@ always @ (posedge memclk) begin
             prev_tstrb_count_read <= tstrb_count_read;
         end
         else begin
+            if (tlast_read) begin
+                prev_tdata_read <= tdata_read;
+                prev_tlast_read <= tlast_read;
+                prev_tstrb_count_read <= tstrb_count_read;
+            end
+            else begin
             prev_tdata_read <= prev_tdata_read;
             
             prev_tstrb_count_read <= prev_tstrb_count_read;
+            end
+            
         end
         
         pkg_state <= next_pkg_state;
 
         rd_state <= next_rd_state;
+        
+//        dout_data <= next_dout_data;
+        
+        oq <= next_oq;
+        
     end
 end
+
+assign dout = dout_data;
 
 localparam INIT = 0;
 
@@ -258,7 +275,7 @@ rden_axis = 1'b0;
 rden_tuser = 1'b0;
 buffer_dout_valid = 1'b0;
 next_rd_state = rd_state;
-oq = {(NUM_QUEUES){1'b0}};
+next_oq = oq;
 next_pkg_state = pkg_state;
 
     case (rd_state) // condition that goes back to rd_state is (~remtpy && ~rempty_tuser)
@@ -269,6 +286,7 @@ next_pkg_state = pkg_state;
             if (~tlast_read) begin /* first arrival packet*/
                 if (~memfull) begin
                     next_rd_state = RD_PKT;
+                    next_oq = tuser_read[DST_POS] | (tuser_read[DST_POS + 2] << 1) | (tuser_read[DST_POS + 4] << 2) | (tuser_read[DST_POS + 6] << 3) | ((tuser_read[DST_POS + 1] | tuser_read[DST_POS + 3] | tuser_read[DST_POS + 5] | tuser_read[DST_POS + 7]) << 4);
                 end
                 else begin
                     next_rd_state = RD_DROP;
@@ -278,6 +296,7 @@ next_pkg_state = pkg_state;
                 if (~r_almost_empty && ~r_almost_empty_tuser) begin
                     rden_axis = 1'b1;
                     rden_tuser = 1'b1;
+                    next_oq = tuser_read[DST_POS] | (tuser_read[DST_POS + 2] << 1) | (tuser_read[DST_POS + 4] << 2) | (tuser_read[DST_POS + 6] << 3) | ((tuser_read[DST_POS + 1] | tuser_read[DST_POS + 3] | tuser_read[DST_POS + 5] | tuser_read[DST_POS + 7]) << 4);
                         if (~memfull) begin
                             next_rd_state = RD_PKT;
                         end
@@ -292,7 +311,6 @@ next_pkg_state = pkg_state;
         
     RD_PKT: // whenever the tdata buffer has two sets of data 
         begin
-            oq = tuser_read[DST_POS] | (tuser_read[DST_POS + 2] << 1) | (tuser_read[DST_POS + 4] << 2) | (tuser_read[DST_POS + 6] << 3) | ((tuser_read[DST_POS + 1] | tuser_read[DST_POS + 3] | tuser_read[DST_POS + 5] | tuser_read[DST_POS + 7]) << 4);
             
             if (~r_almost_empty) begin
             buffer_dout_valid = 1'b1;
@@ -311,47 +329,71 @@ next_pkg_state = pkg_state;
             //                    end
             //                    else begin
                                     next_pkg_state = 3'd2;
+                                    rden_axis = 1'b1;
             //                    end
                             end
                         end
                 3'd2:   begin
                             if (output_enable) begin
+                                if (tlast_read) begin
+                                
+                                end
+                                else 
                                 if (prev_tlast_read) begin
                                     next_pkg_state = 3'd0;
+                                    next_rd_state = INIT;
                                 end
                                 else begin
                                     next_pkg_state = 3'd3;
+                                    rden_axis = 1'b1;
                                 end
                             end
                         end
                 
                 3'd3:   begin
                             if (output_enable) begin
-                                if (prev_tlast_read) begin
-                                    next_pkg_state = 3'd0;
+                                if (tlast_read) begin
+                                    if (prev_tlast_read) begin
+                                        next_pkg_state = 3'd0;
+                                        next_rd_state = INIT;
+                                    end
                                 end
+                                
                                 else begin
                                     next_pkg_state = 3'd4;
+                                    rden_axis = 1'b1;
                                 end
                             end
                         end
                 
                 3'd4:   begin
                             if (output_enable) begin
+                                if (tlast_read) begin
+                                
+                                end
+                                else
                                 if (prev_tlast_read) begin
                                     next_pkg_state = 3'd0;
+                                    next_rd_state = INIT;
                                 end
                                 else begin
                                     next_pkg_state = 3'd1;
                                 end
                             end
                         end
-                default:    next_pkg_state = 3'd0;
+                
+                default:
+                begin
+                    next_pkg_state = 3'd0;
+                    next_rd_state = INIT;
+                end
 
                 endcase
             
             
             end
+            
+
 
         end
     
@@ -366,13 +408,14 @@ next_pkg_state = pkg_state;
     
     
     case (pkg_state)
-    0: dout_data = {tuser_read, prev_tstrb_count_read, pkg_state, 1'b0, /*rden*/1'b0};
+    0: dout_data = {tuser_read, tstrb_count_read, pkg_state, 1'b0, /*rden*/1'b0};
     1: dout_data = {tdata_read[191:0], prev_tstrb_count_read, pkg_state, tlast_read, 1'b0};
     2: dout_data = {tdata_read[127:0], prev_tdata_read[255:192], prev_tstrb_count_read, pkg_state, tlast_read, 1'b0};
     3: dout_data = {tdata_read[63:0], prev_tdata_read[255:128], prev_tstrb_count_read, pkg_state, tlast_read, 1'b0};
     4: dout_data = {prev_tdata_read[255:64], prev_tstrb_count_read, pkg_state, 1'b0, 1'b0};
     default: dout_data = {(8*TDATA_WIDTH+5+1){1'b0}};
     endcase
+    
 
 end
 
