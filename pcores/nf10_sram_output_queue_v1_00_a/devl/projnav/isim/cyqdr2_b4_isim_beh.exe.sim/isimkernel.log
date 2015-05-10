@@ -1,0 +1,28 @@
+Command line:
+   cyqdr2_b4_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  53968
+
+Thu Apr  9 17:46:21 2015
+
+
+ Elaboration Time: 0.03 sec
+
+ Current Memory Usage: 226.111 Meg
+
+ Total Signals          : 43
+ Total Nets             : 201
+ Total Signal Drivers   : 16
+ Total Blocks           : 2
+ Total Primitive Blocks : 2
+ Total Processes        : 90
+ Total Traceable Variables  : 128
+ Total Scalar Nets and Variables : 75498735
+
+ Total Simulation Time: 0.13 sec
+
+ Current Memory Usage: 301.613 Meg
+
+Thu Apr  9 19:00:53 2015
+

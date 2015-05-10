@@ -1,0 +1,42 @@
+Running: /local/scratch/jz377/Xilinx/13.4/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/local/scratch/jz377/git_repo/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/module_prototype_isim_beh.exe" -prj "/local/scratch/jz377/git_repo/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/module_prototype_beh.prj" "work.module_prototype" "work.glbl" 
+ISim O.87xd (signature 0x8ddf5b5d)
+Number of CPUs detected in this system: 12
+Turning on mult-threading, number of parallel sub-compilation jobs: 24 
+Determining compilation order of HDL files
+Analyzing Verilog file "/local/scratch/jz377/git_repo/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/../../hdl/verilog/small_async_fifo.v" into library work
+Analyzing Verilog file "/local/scratch/jz377/git_repo/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/../../hdl/verilog/fallthrough_small_async_fifo.v" into library work
+Analyzing Verilog file "/local/scratch/jz377/git_repo/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/../../hdl/verilog/sigen.v" into library work
+WARNING:HDLCompiler:568 - "/local/scratch/jz377/git_repo/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/../../hdl/verilog/sigen.v" Line 182: Constant value is truncated to fit in <2> bits.
+Analyzing Verilog file "/local/scratch/jz377/git_repo/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/../../hdl/verilog/axi2fifo_asyn_v2.v" into library work
+Analyzing Verilog file "/local/scratch/jz377/git_repo/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/../../hdl/verilog/module_prototype.v" into library work
+WARNING:HDLCompiler:35 - "/local/scratch/jz377/git_repo/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/../../hdl/verilog/module_prototype.v" Line 92: <output_enable> is already implicitly declared earlier.
+Analyzing Verilog file "/local/scratch/jz377/Xilinx/13.4/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 94648 KB
+Fuse CPU Usage: 810 ms
+Compiling module sigen(PACKET_LEN=50)
+Compiling module sync_r2w(ADDRSIZE=4)
+Compiling module sync_w2r(ADDRSIZE=4)
+Compiling module fifo_mem(DATASIZE=262,ADDRSIZE=4...
+Compiling module rptr_empty(ADDRSIZE=4,ALMOST_EMP...
+Compiling module wptr_full(ADDRSIZE=4,ALMOST_FULL...
+Compiling module small_async_fifo(DSIZE=262,ASIZE...
+Compiling module fallthrough_small_async_fifo(WID...
+Compiling module sync_r2w(ADDRSIZE=3)
+Compiling module sync_w2r(ADDRSIZE=3)
+Compiling module fifo_mem(DATASIZE=128,ADDRSIZE=3...
+Compiling module rptr_empty(ADDRSIZE=3,ALMOST_EMP...
+Compiling module wptr_full(ADDRSIZE=3,ALMOST_FULL...
+Compiling module small_async_fifo(DSIZE=128,ASIZE...
+Compiling module fallthrough_small_async_fifo(WID...
+Compiling module Axi2Fifo_asyn_v2_default
+Compiling module module_prototype
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 18 Verilog Units
+Built simulation executable /local/scratch/jz377/git_repo/nf10_sram_oq/pcores/nf10_sram_output_queue_v1_00_a/devl/projnav/module_prototype_isim_beh.exe
+Fuse Memory Usage: 1704120 KB
+Fuse CPU Usage: 840 ms
+GCC CPU Usage: 150 ms

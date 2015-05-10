@@ -1,0 +1,4 @@
+verilog isim_temp "../../hdl/verilog/small_async_fifo.v"
+verilog isim_temp "../../hdl/verilog/fallthrough_small_async_fifo.v"
+verilog isim_temp "../../hdl/verilog/axi2fifo_asyn_v2.v"
+verilog isim_temp "/local/scratch/jz377/Xilinx/13.4/ISE_DS/ISE//verilog/src/glbl.v"

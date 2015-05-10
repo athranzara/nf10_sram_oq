@@ -1,0 +1,6 @@
+verilog work "../../hdl/verilog/small_async_fifo.v"
+verilog work "../../hdl/verilog/fallthrough_small_async_fifo.v"
+verilog work "../../hdl/verilog/sigen.v"
+verilog work "../../hdl/verilog/axi2fifo_asyn_v2.v"
+verilog work "../../hdl/verilog/module_prototype.v"
+verilog work "/local/scratch/jz377/Xilinx/13.4/ISE_DS/ISE//verilog/src/glbl.v"
